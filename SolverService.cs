@@ -13,7 +13,7 @@ public sealed class SolverService
   public string Solve()
   {
     if (Abilities.Count > Hotkeys.Count)
-      return "There aren't enough hotkeys to cast that many abilities.";
+      return $"There aren't enough hotkeys ({Hotkeys.Count}) to cast that many abilities ({Abilities.Count}).";
 
     var stringBuilder = new StringBuilder();
     var orderedAbilities = Abilities.OrderBy(x => x.Frequency).ToList();

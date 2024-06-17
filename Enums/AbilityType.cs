@@ -4,5 +4,8 @@ public enum AbilityType
 {
   Other,
   Dispel,
-  Interrupt
+  Interrupt,
+  Movement,
+  Stun,
+  ExternalDefensive
 }

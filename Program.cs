@@ -66,6 +66,34 @@ var solverService = new SolverService
       Name = "Holy Nova",
       Frequency = Frequency.Constant
     },
+    new()
+    {
+      Name = "Divine Hymn",
+      Frequency = Frequency.Rarely
+    },
+    new()
+    {
+      Name = "Psychic Scream",
+      Frequency = Frequency.Sometimes,
+      AbilityType = AbilityType.Stun
+    },
+    new()
+    {
+      Name = "Guardian Spirit",
+      Frequency = Frequency.Sometimes,
+      AbilityType = AbilityType.ExternalDefensive
+    },
+    new()
+    {
+      Name = "Fade",
+      Frequency = Frequency.Rarely
+    },
+    new()
+    {
+      Name = "Angelic Feather",
+      Frequency = Frequency.Frequent,
+      AbilityType = AbilityType.Movement
+    },
   },
   Hotkeys = new List<Hotkey>
   {
@@ -118,7 +146,7 @@ var solverService = new SolverService
     new()
     {
       Key = "v",
-      Convenience = Convenience.Easy
+      Convenience = Convenience.Trivial
     },
     new()
     {
@@ -128,12 +156,35 @@ var solverService = new SolverService
     new()
     {
       Key = "c",
-      Convenience = Convenience.Easy
+      Convenience = Convenience.Trivial
     },
     new()
     {
       Key = "z",
+      Convenience = Convenience.Trivial
+    },
+    new()
+    {
+      Key = "x",
       Convenience = Convenience.Easy
+    },
+    new()
+    {
+      Key = "b",
+      Convenience = Convenience.Easy,
+      ReservedForAbilityType = AbilityType.Stun
+    },
+    new()
+    {
+      Key = "t",
+      Convenience = Convenience.Easy,
+      ReservedForAbilityType = AbilityType.ExternalDefensive
+    },
+    new()
+    {
+      Key = "5",
+      Convenience = Convenience.Moderate,
+      ReservedForAbilityType = AbilityType.Movement
     },
   }
 };
