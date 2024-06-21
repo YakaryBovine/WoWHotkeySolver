@@ -26,7 +26,7 @@ public static class Priest
       new()
       {
         Name = "Circle of Healing",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Frequent
       },
       new()
       {

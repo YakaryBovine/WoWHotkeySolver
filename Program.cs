@@ -11,12 +11,12 @@ var solverService = new SolverService
     new()
     {
       Key = "q",
-      Convenience = Convenience.Incredible
+      Convenience = Convenience.Staple
     },
     new()
     {
       Key = "e",
-      Convenience = Convenience.Incredible
+      Convenience = Convenience.Staple
     },
     new()
     {
@@ -41,23 +41,23 @@ var solverService = new SolverService
     new()
     {
       Key = "f",
-      Convenience = Convenience.Average
+      Convenience = Convenience.Good
     },
     new()
     {
       Key = "r",
-      Convenience = Convenience.Average,
+      Convenience = Convenience.Incredible,
       ReservedForAbilityType = AbilityType.Dispel
     },
     new()
     {
       Key = "c",
-      Convenience = Convenience.Average
+      Convenience = Convenience.Incredible
     },
     new()
     {
       Key = "v",
-      Convenience = Convenience.Good
+      Convenience = Convenience.Incredible
     },
     new()
     {
