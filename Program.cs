@@ -11,122 +11,122 @@ var solverService = new SolverService
     new()
     {
       Key = "q",
-      Convenience = Convenience.Trivial
+      Convenience = Convenience.Incredible
     },
     new()
     {
       Key = "e",
-      Convenience = Convenience.Trivial
+      Convenience = Convenience.Incredible
     },
     new()
     {
       Key = "1",
-      Convenience = Convenience.Easy
+      Convenience = Convenience.Average
     },
     new()
     {
       Key = "2",
-      Convenience = Convenience.Easy
+      Convenience = Convenience.Average
     },
     new()
     {
       Key = "3",
-      Convenience = Convenience.Easy
+      Convenience = Convenience.Average
     },
     new()
     {
       Key = "4",
-      Convenience = Convenience.Easy
+      Convenience = Convenience.Average
     },
     new()
     {
       Key = "f",
-      Convenience = Convenience.Easy
+      Convenience = Convenience.Average
     },
     new()
     {
       Key = "r",
-      Convenience = Convenience.Easy,
+      Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.Dispel
     },
     new()
     {
       Key = "c",
-      Convenience = Convenience.Easy
+      Convenience = Convenience.Average
     },
     new()
     {
       Key = "v",
-      Convenience = Convenience.Trivial
+      Convenience = Convenience.Good
     },
     new()
     {
       Key = "g",
-      Convenience = Convenience.Easy
+      Convenience = Convenience.Average
     },
     new()
     {
       Key = "c",
-      Convenience = Convenience.Trivial
+      Convenience = Convenience.Good
     },
     new()
     {
       Key = "z",
-      Convenience = Convenience.Trivial
+      Convenience = Convenience.Good
     },
     new()
     {
       Key = "x",
-      Convenience = Convenience.Easy
+      Convenience = Convenience.Average
     },
     new()
     {
       Key = "b",
-      Convenience = Convenience.Easy,
+      Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.Stun
     },
     new()
     {
       Key = "t",
-      Convenience = Convenience.Easy,
+      Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.ExternalDefensive
     },
     new()
     {
       Key = "5",
-      Convenience = Convenience.Moderate,
+      Convenience = Convenience.Bad,
       ReservedForAbilityType = AbilityType.Movement
     },
     new()
     {
       Key = "`",
-      Convenience = Convenience.Moderate
+      Convenience = Convenience.Bad
     },
     new()
     {
       Key = "ctrl 1",
-      Convenience = Convenience.Easy,
+      Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.HealingPotion,
       AllowShiftModifier = false
     },
     new()
     {
       Key = "ctrl 2",
-      Convenience = Convenience.Easy,
+      Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.Healthstone,
       AllowShiftModifier = false
     },
     new()
     {
       Key = "ctrl 3",
-      Convenience = Convenience.Easy,
+      Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.PersonalDefensive,
       AllowShiftModifier = false
     },
     new()
     {
       Key = "ctrl 6",
-      Convenience = Convenience.Easy,
+      Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.CombatPotion,
       AllowShiftModifier = false
     },

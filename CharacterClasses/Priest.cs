@@ -10,12 +10,12 @@ public static class Priest
     {
       new()
       {
-        Name = "Flash Heal",
+        Name = "Smite",
         Frequency = Frequency.Constant
       },
       new()
       {
-        Name = "Smite",
+        Name = "Flash Heal",
         Frequency = Frequency.Constant
       },
       new()
@@ -46,7 +46,7 @@ public static class Priest
       new()
       {
         Name = "Purify",
-        Frequency = Frequency.Constant,
+        Frequency = Frequency.Frequent,
         AbilityType = AbilityType.Dispel
       },
       new()

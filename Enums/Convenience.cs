@@ -5,9 +5,8 @@
 /// </summary>
 public enum Convenience
 {
-  Trivial,
-  Easy,
-  Moderate,
-  Hard,
-  Impossible
+  Incredible,
+  Good,
+  Average,
+  Bad
 }
