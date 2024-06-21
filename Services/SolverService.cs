@@ -1,4 +1,6 @@
-﻿namespace WoWHotkeySolver.Services;
+﻿using WoWHotkeySolver.Enums;
+
+namespace WoWHotkeySolver.Services;
 
 public sealed class SolverService
 {
@@ -8,14 +10,16 @@ public sealed class SolverService
 
   public string Solve()
   {
-    if (Abilities.Count > Hotkeys.Count)
-      return $"There aren't enough hotkeys ({Hotkeys.Count}) to cast that many abilities ({Abilities.Count}).";
+    var transformedHotkeys = TransformAndOrderHotkeys();
+    
+    if (Abilities.Count > transformedHotkeys.Count)
+      return $"There aren't enough hotkeys ({transformedHotkeys.Count}) to cast that many abilities ({Abilities.Count}).";
 
     var solution = new HotkeySolution();
     var abilityHotkeyPool = new AbilityHotkeyPool
     {
       Abilities = Abilities.OrderBy(x => x.Frequency).ToList(),
-      Hotkeys = Hotkeys.OrderBy(x => x.Convenience).ToList()
+      Hotkeys = transformedHotkeys
     };
 
     AllocateReservedHotkeys(abilityHotkeyPool, solution);
@@ -45,5 +49,18 @@ public sealed class SolverService
       solution.AddHotkey(ability, hotkey);
       abilityHotkeyPool.Remove(ability, hotkey);
     }
+  }
+
+  private List<Hotkey> TransformAndOrderHotkeys()
+  {
+    var hotkeys = Hotkeys.ToList();
+    hotkeys.AddRange(Hotkeys.Where(x => x.AllowShiftModifier).Select(h => new Hotkey
+    {
+      Key = $"Shift {h.Key}",
+      Convenience = h.Convenience,
+      AllowShiftModifier = false,
+      ReservedForAbilityType = AbilityType.Other
+    }));
+    return hotkeys.OrderBy(x => x.Convenience).ToList();
   }
 }
