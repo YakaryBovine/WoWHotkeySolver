@@ -1,8 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.Text;
 using WoWHotkeySolver.Enums;
 
-namespace WoWHotkeySolver;
+namespace WoWHotkeySolver.Services;
 
 public sealed class SolverService
 {
@@ -15,7 +14,7 @@ public sealed class SolverService
     if (Abilities.Count > Hotkeys.Count)
       return $"There aren't enough hotkeys ({Hotkeys.Count}) to cast that many abilities ({Abilities.Count}).";
 
-    var stringBuilder = new StringBuilder();
+    var solution = new HotkeySolution();
     var orderedAbilities = Abilities.OrderBy(x => x.Frequency).ToList();
     var orderedHotkeys = Hotkeys.OrderBy(x => x.Convenience).ToList();
 
@@ -25,18 +24,18 @@ public sealed class SolverService
       {
         orderedAbilities.Remove(ability);
         orderedHotkeys.Remove(hotkey);
-        AppendAbilityHotkeyPair(stringBuilder, ability, hotkey);
+        solution.AddHotkey(ability, hotkey);
       }
     }
     
     foreach (var ability in orderedAbilities)
     {
       var hotkey = orderedHotkeys.First();
-      AppendAbilityHotkeyPair(stringBuilder, ability, hotkey);
+      solution.AddHotkey(ability, hotkey);
       orderedHotkeys.RemoveAt(0);
     }
     
-    return stringBuilder.ToString();
+    return solution.ToString();
   }
 
   /// <summary>
@@ -47,10 +46,5 @@ public sealed class SolverService
     hotkey = Hotkeys.FirstOrDefault(x =>
       x.ReservedForAbilityType != AbilityType.Other && x.ReservedForAbilityType == ability.AbilityType);
     return hotkey != null;
-  }
-
-  private static void AppendAbilityHotkeyPair(StringBuilder stringBuilder, Ability ability, Hotkey hotkey)
-  {
-    stringBuilder.AppendLine($"{ability.Name}: {hotkey.Key}");
   }
 }
