@@ -43,11 +43,13 @@ public sealed class SolverService
   private static void AllocateUnreservedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolution solution)
   {
     var hotkeys = abilityHotkeyPool.Hotkeys.ToList();
+    var hotkeyIndex = hotkeys.Count - 1;
     foreach (var ability in abilityHotkeyPool.Abilities.ToList())
     {
-      var hotkey = hotkeys.First();
+      var hotkey = hotkeys[hotkeyIndex];
       solution.AddHotkey(ability, hotkey);
       abilityHotkeyPool.Remove(ability, hotkey);
+      hotkeyIndex--;
     }
   }
 
@@ -56,11 +58,11 @@ public sealed class SolverService
     var hotkeys = Hotkeys.ToList();
     hotkeys.AddRange(Hotkeys.Where(x => x.AllowShiftModifier).Select(h => new Hotkey
     {
-      Key = $"Shift {h.Key}",
-      Convenience = h.Convenience,
+      Key = $"shift {h.Key}",
+      Convenience = h.Convenience + 1,
       AllowShiftModifier = false,
       ReservedForAbilityType = AbilityType.Other
     }));
-    return hotkeys.OrderBy(x => x.Convenience).ToList();
+    return hotkeys.OrderByDescending(x => x.Convenience).ToList();
   }
 }
