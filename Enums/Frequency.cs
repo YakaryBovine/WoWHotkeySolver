@@ -9,5 +9,5 @@ public enum Frequency
   Frequent,
   Sometimes,
   Rarely,
-  Never
+  AlmostNever
 }

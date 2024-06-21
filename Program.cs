@@ -94,6 +94,96 @@ var solverService = new SolverService
       Frequency = Frequency.Frequent,
       AbilityType = AbilityType.Movement
     },
+    new()
+    {
+      Name = "Leap of Faith",
+      Frequency = Frequency.Rarely
+    },
+    new()
+    {
+      Name = "Levitate",
+      Frequency = Frequency.AlmostNever
+    },
+    new()
+    {
+      Name = "Mass Dispel",
+      Frequency = Frequency.Sometimes
+    },
+    new()
+    {
+      Name = "Mind Soothe",
+      Frequency = Frequency.Rarely
+    },
+    new()
+    {
+      Name = "Power Infusion",
+      Frequency = Frequency.Rarely
+    },
+    new()
+    {
+      Name = "Opie Menu",
+      Frequency = Frequency.Rarely
+    },
+    new()
+    {
+      Name = "Power Word: Shield",
+      Frequency = Frequency.AlmostNever
+    },
+    new()
+    {
+      Name = "Renew",
+      Frequency = Frequency.AlmostNever
+    },
+    new()
+    {
+      Name = "Shadowfiend",
+      Frequency = Frequency.Rarely
+    },
+    new()
+    {
+      Name = "Lightwell",
+      Frequency = Frequency.Rarely
+    },
+    new()
+    {
+      Name = "Symbol of Hope",
+      Frequency = Frequency.Rarely
+    },
+    new()
+    {
+      Name = "Divine Word",
+      Frequency = Frequency.Sometimes
+    },
+    new()
+    {
+      Name = "Power Word: Life",
+      Frequency = Frequency.Sometimes
+    },
+    new()
+    {
+      Name = "Dispel Magic",
+      Frequency = Frequency.Sometimes
+    },
+    new()
+    {
+      Name = "Shackle Undead",
+      Frequency = Frequency.AlmostNever
+    },
+    new()
+    {
+      Name = "Mind Control/Dominate Mind",
+      Frequency = Frequency.AlmostNever
+    },
+    new()
+    {
+      Name = "Halo/Divine Star",
+      Frequency = Frequency.Frequent
+    },
+    new()
+    {
+      Name = "Apotheosis/Holy Word: Salvation",
+      Frequency = Frequency.Rarely
+    }
   },
   Hotkeys = new List<Hotkey>
   {
