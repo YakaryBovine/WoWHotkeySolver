@@ -10,5 +10,6 @@ public enum AbilityType
   ExternalDefensive,
   HealingPotion,
   Healthstone,
-  PersonalDefensive
+  PersonalDefensive,
+  CombatPotion
 }

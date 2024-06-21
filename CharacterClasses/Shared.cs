@@ -19,6 +19,12 @@ public static class Shared
         Name = "Healing Potion",
         Frequency = Frequency.Sometimes,
         AbilityType = AbilityType.HealingPotion
+      },
+      new()
+      {
+        Name = "Combat Potion",
+        Frequency = Frequency.Sometimes,
+        AbilityType = AbilityType.CombatPotion
       }
     };
   }

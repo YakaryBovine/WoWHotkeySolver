@@ -123,6 +123,13 @@ var solverService = new SolverService
       ReservedForAbilityType = AbilityType.PersonalDefensive,
       AllowShiftModifier = false
     },
+    new()
+    {
+      Key = "ctrl 6",
+      Convenience = Convenience.Easy,
+      ReservedForAbilityType = AbilityType.CombatPotion,
+      AllowShiftModifier = false
+    },
   }
 };
 
