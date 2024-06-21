@@ -97,6 +97,11 @@ var solverService = new SolverService
       Convenience = Convenience.Moderate,
       ReservedForAbilityType = AbilityType.Movement
     },
+    new()
+    {
+      Key = "`",
+      Convenience = Convenience.Moderate
+    }
   }
 };
 
