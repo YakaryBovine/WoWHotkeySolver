@@ -114,11 +114,6 @@ public static class Priest
       },
       new()
       {
-        Name = "Mind Soothe",
-        Frequency = Frequency.Rarely
-      },
-      new()
-      {
         Name = "Power Infusion",
         Frequency = Frequency.Rarely
       },
