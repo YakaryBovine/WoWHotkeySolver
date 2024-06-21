@@ -7,5 +7,8 @@ public enum AbilityType
   Interrupt,
   Movement,
   Stun,
-  ExternalDefensive
+  ExternalDefensive,
+  HealingPotion,
+  Healthstone,
+  PersonalDefensive
 }

@@ -6,7 +6,7 @@ public static class Priest
 {
   public static List<Ability> GetAbilities()
   {
-    return new List<Ability>
+    var abilities = new List<Ability>
     {
       new()
       {
@@ -186,7 +186,15 @@ public static class Priest
       {
         Name = "Apotheosis/Holy Word: Salvation",
         Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Desperate Prayer",
+        Frequency = Frequency.Sometimes,
+        AbilityType = AbilityType.PersonalDefensive
       }
     };
+    abilities.AddRange(Shared.GetAbilities());
+    return abilities;
   }
 }

@@ -101,7 +101,28 @@ var solverService = new SolverService
     {
       Key = "`",
       Convenience = Convenience.Moderate
-    }
+    },
+    new()
+    {
+      Key = "ctrl 1",
+      Convenience = Convenience.Easy,
+      ReservedForAbilityType = AbilityType.HealingPotion,
+      AllowShiftModifier = false
+    },
+    new()
+    {
+      Key = "ctrl 2",
+      Convenience = Convenience.Easy,
+      ReservedForAbilityType = AbilityType.Healthstone,
+      AllowShiftModifier = false
+    },
+    new()
+    {
+      Key = "ctrl 3",
+      Convenience = Convenience.Easy,
+      ReservedForAbilityType = AbilityType.PersonalDefensive,
+      AllowShiftModifier = false
+    },
   }
 };
 
