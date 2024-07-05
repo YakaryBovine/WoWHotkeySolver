@@ -119,11 +119,6 @@ public static class Priest
       },
       new()
       {
-        Name = "Opie Menu",
-        Frequency = Frequency.Rarely
-      },
-      new()
-      {
         Name = "Power Word: Shield",
         Frequency = Frequency.AlmostNever
       },

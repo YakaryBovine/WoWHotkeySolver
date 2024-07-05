@@ -5,7 +5,7 @@ using WoWHotkeySolver.Services;
 
 var solverService = new SolverService
 {
-  Abilities = Priest.GetAbilities(),
+  Abilities = Enhancement.GetAbilities(),
   Hotkeys = new List<Hotkey>
   {
     new()
@@ -57,7 +57,8 @@ var solverService = new SolverService
     new()
     {
       Key = "v",
-      Convenience = Convenience.Incredible
+      Convenience = Convenience.Incredible,
+      ReservedForAbilityType = AbilityType.Interrupt
     },
     new()
     {

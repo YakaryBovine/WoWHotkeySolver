@@ -25,6 +25,16 @@ public static class Shared
         Name = "Combat Potion",
         Frequency = Frequency.Sometimes,
         AbilityType = AbilityType.CombatPotion
+      },
+      new()
+      {
+        Name = "Trinket",
+        Frequency = Frequency.Sometimes
+      },
+      new()
+      {
+        Name = "Opie Menu",
+        Frequency = Frequency.AlmostNever
       }
     };
   }
