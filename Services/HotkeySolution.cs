@@ -17,7 +17,7 @@ public sealed class HotkeySolution
     var sortedAbilityHotkeys = _abilityHotkeys.OrderBy(x => x.Key.Frequency);
     foreach (var (ability, hotkey) in sortedAbilityHotkeys)
     {
-      stringBuilder.AppendLine($"{ability.Name}: {hotkey.Key}");
+      stringBuilder.AppendLine($"{ability.Name}: {hotkey.ToString()}");
     }
     return stringBuilder.ToString();
   }

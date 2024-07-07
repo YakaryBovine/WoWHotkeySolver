@@ -56,11 +56,12 @@ public sealed class SolverService
   private List<Hotkey> TransformAndOrderHotkeys()
   {
     var hotkeys = Hotkeys.ToList();
-    hotkeys.AddRange(Hotkeys.Where(x => x.AllowShiftModifier).Select(h => new Hotkey
+    hotkeys.AddRange(Hotkeys.Where(x => x.AllowShiftModifier && x.Modifier == Modifier.None).Select(h => new Hotkey
     {
-      Key = $"shift {h.Key}",
+      Key = $"{h.Key}",
       Convenience = h.Convenience + 3,
       AllowShiftModifier = false,
+      Modifier = Modifier.Shift,
       ReservedForAbilityType = AbilityType.Other
     }));
     return hotkeys.OrderByDescending(x => x.Convenience).ToList();

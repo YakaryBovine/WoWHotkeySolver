@@ -100,31 +100,31 @@ var solverService = new SolverService
     },
     new()
     {
-      Key = "ctrl 1",
+      Key = "1",
+      Modifier = Modifier.Control,
       Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.HealingPotion,
-      AllowShiftModifier = false
     },
     new()
     {
-      Key = "ctrl 2",
+      Key = "2",
+      Modifier = Modifier.Control,
       Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.Healthstone,
-      AllowShiftModifier = false
     },
     new()
     {
-      Key = "ctrl 3",
+      Key = "3",
+      Modifier = Modifier.Control,
       Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.PersonalDefensive,
-      AllowShiftModifier = false
     },
     new()
     {
-      Key = "ctrl 6",
+      Key = "6",
+      Modifier = Modifier.Control,
       Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.CombatPotion,
-      AllowShiftModifier = false
     },
   }
 };
