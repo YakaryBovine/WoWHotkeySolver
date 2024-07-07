@@ -67,11 +67,6 @@ var solverService = new SolverService
     },
     new()
     {
-      Key = "c",
-      Convenience = Convenience.Good
-    },
-    new()
-    {
       Key = "z",
       Convenience = Convenience.Good
     },
