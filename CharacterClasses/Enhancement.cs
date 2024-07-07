@@ -27,11 +27,6 @@ public static class Enhancement
       },
       new()
       {
-        Name = "Chain Lightning",
-        Frequency = Frequency.Frequent
-      },
-      new()
-      {
         Name = "Earthbind Totem",
         Frequency = Frequency.Sometimes
       },
@@ -58,7 +53,7 @@ public static class Enhancement
       },
       new()
       {
-        Name = "Healing Stream Totem",
+        Name = "Chain Lightning",
         Frequency = Frequency.Sometimes
       },
       new()
@@ -78,13 +73,13 @@ public static class Enhancement
       },
       new()
       {
-        Name = "Purge",
+        Name = "Purge/Greater Purge",
         Frequency = Frequency.Frequent,
         AbilityType = AbilityType.Dispel
       },
       new()
       {
-        Name = "Spirit Walk",
+        Name = "Spirit Walk/Gust of Wind",
         Frequency = Frequency.Sometimes
       },
       new()
@@ -105,17 +100,77 @@ public static class Enhancement
       },
       new()
       {
-        Name = "Lava Lash",
-        Frequency = Frequency.Constant
-      },
-      new()
-      {
         Name = "Storm Strike",
         Frequency = Frequency.Constant
       },
       new()
       {
+        Name = "Lava Lash",
+        Frequency = Frequency.Constant
+      },
+      new()
+      {
         Name = "Sundering",
+        Frequency = Frequency.Sometimes
+      },
+      new()
+      {
+        Name = "Haymaker",
+        Frequency = Frequency.Sometimes
+      },
+      new()
+      {
+        Name = "Earth Elemental",
+        Frequency = Frequency.AlmostNever
+      },
+      new()
+      {
+        Name = "Earth Shield",
+        Frequency = Frequency.Sometimes
+      },
+      new()
+      {
+        Name = "Thunderstorm",
+        Frequency = Frequency.Sometimes
+      },
+      new()
+      {
+        Name = "Totemic Projection",
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Totemic Recall",
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Wind Rush Totem/Earthgrab Totem",
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Elemental Blast",
+        Frequency = Frequency.Frequent
+      },
+      new()
+      {
+        Name = "Ice Strike",
+        Frequency = Frequency.Frequent
+      },
+      new()
+      {
+        Name = "Primordial Wave",
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Windfury Totem",
+        Frequency = Frequency.Sometimes
+      },
+      new()
+      {
+        Name = "Doom Winds",
         Frequency = Frequency.Sometimes
       }
     };
