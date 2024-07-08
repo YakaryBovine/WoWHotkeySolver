@@ -34,7 +34,8 @@ public static class Shared
       new()
       {
         Name = "Opie Menu",
-        Frequency = Frequency.AlmostNever
+        Frequency = Frequency.AlmostNever,
+        AbilityType = AbilityType.OpieMenu
       }
     };
   }

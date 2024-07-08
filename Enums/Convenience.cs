@@ -15,5 +15,7 @@ public enum Convenience
   
   Average,
   
-  Bad
+  Bad,
+  
+  Terrible
 }

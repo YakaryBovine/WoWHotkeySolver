@@ -11,5 +11,6 @@ public enum AbilityType
   HealingPotion,
   Healthstone,
   PersonalDefensive,
-  CombatPotion
+  CombatPotion,
+  OpieMenu
 }

@@ -73,7 +73,7 @@ var solverService = new SolverService
     new()
     {
       Key = "x",
-      Convenience = Convenience.Average
+      Convenience = Convenience.Bad
     },
     new()
     {
@@ -96,7 +96,8 @@ var solverService = new SolverService
     new()
     {
       Key = "`",
-      Convenience = Convenience.Bad
+      Convenience = Convenience.Terrible,
+      AllowShiftModifier = false
     },
     new()
     {
@@ -126,6 +127,13 @@ var solverService = new SolverService
       Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.CombatPotion,
     },
+    new()
+    {
+      Key = "`",
+      Modifier = Modifier.Shift,
+      Convenience = Convenience.Bad,
+      ReservedForAbilityType = AbilityType.OpieMenu,
+    }
   }
 };
 

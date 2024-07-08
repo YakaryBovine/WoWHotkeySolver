@@ -28,7 +28,7 @@ public static class Enhancement
       new()
       {
         Name = "Earthbind Totem",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Rarely
       },
       new()
       {
@@ -45,11 +45,6 @@ public static class Enhancement
         Name = "Ghost Wolf",
         Frequency = Frequency.Frequent,
         AbilityType = AbilityType.Movement
-      },
-      new()
-      {
-        Name = "Healing Surge",
-        Frequency = Frequency.Sometimes
       },
       new()
       {
@@ -100,7 +95,7 @@ public static class Enhancement
       },
       new()
       {
-        Name = "Storm Strike",
+        Name = "Stormstrike/Healing Surge",
         Frequency = Frequency.Constant
       },
       new()
@@ -161,7 +156,7 @@ public static class Enhancement
       new()
       {
         Name = "Primordial Wave",
-        Frequency = Frequency.Rarely
+        Frequency = Frequency.Sometimes
       },
       new()
       {
