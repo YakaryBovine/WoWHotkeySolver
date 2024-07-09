@@ -2,6 +2,7 @@
 using WoWHotkeySolver.CharacterClasses;
 using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Services;
+using WoWHotkeySolver.Specializations;
 
 var solverService = new SolverService
 {
