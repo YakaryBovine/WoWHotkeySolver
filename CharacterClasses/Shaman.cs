@@ -99,6 +99,7 @@ public sealed class Shaman
         AbilityType = AbilityType.Movement
       },
     };
+    abilities.AddRange(Shared.GetAbilities());
     return abilities;
   }
 }

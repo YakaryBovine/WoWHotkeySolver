@@ -1,12 +1,11 @@
 ﻿using WoWHotkeySolver;
-using WoWHotkeySolver.CharacterClasses;
 using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Services;
 using WoWHotkeySolver.Specializations;
 
 var solverService = new SolverService
 {
-  Abilities = Enhancement.GetAbilities(),
+  Abilities = Blood.GetAbilities(),
   Hotkeys = new List<Hotkey>
   {
     new()
@@ -42,7 +41,8 @@ var solverService = new SolverService
     new()
     {
       Key = "f",
-      Convenience = Convenience.Good
+      Convenience = Convenience.Good,
+      ReservedForAbilityType = AbilityType.Taunt
     },
     new()
     {
@@ -64,7 +64,8 @@ var solverService = new SolverService
     new()
     {
       Key = "g",
-      Convenience = Convenience.Average
+      Convenience = Convenience.Average,
+      ReservedForAbilityType = AbilityType.AoE
     },
     new()
     {

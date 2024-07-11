@@ -12,5 +12,7 @@ public enum AbilityType
   Healthstone,
   PersonalDefensive,
   CombatPotion,
-  OpieMenu
+  OpieMenu,
+  Taunt,
+  AoE
 }

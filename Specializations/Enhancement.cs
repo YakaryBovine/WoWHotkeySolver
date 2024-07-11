@@ -80,7 +80,6 @@ public static class Enhancement
         Frequency = Frequency.Sometimes
       }
     };
-    abilities.AddRange(Shared.GetAbilities());
     abilities.AddRange(Shaman.GetAbilities());
     return abilities;
   }
