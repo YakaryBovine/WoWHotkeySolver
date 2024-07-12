@@ -5,7 +5,7 @@ using WoWHotkeySolver.Specializations;
 
 var solverService = new SolverService
 {
-  Abilities = Blood.GetAbilities(),
+  Abilities = Elemental.GetAbilities(),
   Hotkeys = new List<Hotkey>
   {
     new()
@@ -135,6 +135,11 @@ var solverService = new SolverService
       Modifier = Modifier.Shift,
       Convenience = Convenience.Bad,
       ReservedForAbilityType = AbilityType.OpieMenu,
+    },
+    new()
+    {
+      Key = "h",
+      Convenience = Convenience.Bad
     }
   }
 };

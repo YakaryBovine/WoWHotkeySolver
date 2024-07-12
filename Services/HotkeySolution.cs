@@ -14,7 +14,10 @@ public sealed class HotkeySolution
   public override string ToString()
   {
     var stringBuilder = new StringBuilder();
-    var sortedAbilityHotkeys = _abilityHotkeys.OrderBy(x => x.Key.Frequency);
+    var sortedAbilityHotkeys = _abilityHotkeys
+      .OrderBy(x => x.Value.Modifier)
+      .ThenBy(x => x.Value.Convenience)
+      .ThenBy(x => x.Value.Key);
     foreach (var (ability, hotkey) in sortedAbilityHotkeys)
     {
       stringBuilder.AppendLine($"{ability.Name}: {hotkey.ToString()}");
