@@ -10,8 +10,13 @@ public static class Priest
     {
       new()
       {
-        Name = "Shadow Word: Pain",
+        Name = "Shadow Word: Pain/Power Word: Life",
         Frequency = Frequency.Frequent
+      },
+      new()
+      {
+        Name = "Mind Blast/Holy Fire/Power Infusion",
+        Frequency = Frequency.Constant
       },
       new()
       {
@@ -22,7 +27,8 @@ public static class Priest
       new()
       {
         Name = "Fade",
-        Frequency = Frequency.Rarely
+        Frequency = Frequency.Rarely,
+        AbilityType = AbilityType.PersonalDefensive
       },
       new()
       {
@@ -37,25 +43,9 @@ public static class Priest
       },
       new()
       {
-        Name = "Levitate",
-        Frequency = Frequency.AlmostNever
-      },
-      new()
-      {
         Name = "Mass Dispel",
         Frequency = Frequency.Sometimes
       },
-      new()
-      {
-        Name = "Power Infusion",
-        Frequency = Frequency.Rarely
-      },
-      new()
-      {
-        Name = "Power Word: Shield",
-        Frequency = Frequency.AlmostNever
-      },
-
       new()
       {
         Name = "Shadowfiend",
@@ -86,7 +76,7 @@ public static class Priest
         Name = "Desperate Prayer",
         Frequency = Frequency.Sometimes,
         AbilityType = AbilityType.PersonalDefensive
-      }
+      },
     };
     abilities.AddRange(Shared.GetAbilities());
     return abilities;

@@ -29,7 +29,8 @@ public static class Shared
       new()
       {
         Name = "Trinket",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Sometimes,
+        AbilityType = AbilityType.Trinket
       },
       new()
       {

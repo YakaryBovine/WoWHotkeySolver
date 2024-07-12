@@ -99,21 +99,22 @@ var solverService = new SolverService
     {
       Key = "`",
       Convenience = Convenience.Terrible,
-      AllowShiftModifier = false
+      AllowShiftModifier = false,
+      ReservedForAbilityType = AbilityType.Trinket
     },
     new()
     {
       Key = "1",
       Modifier = Modifier.Control,
       Convenience = Convenience.Average,
-      ReservedForAbilityType = AbilityType.HealingPotion,
+      ReservedForAbilityType = AbilityType.PersonalDefensive,
     },
     new()
     {
       Key = "2",
       Modifier = Modifier.Control,
       Convenience = Convenience.Average,
-      ReservedForAbilityType = AbilityType.Healthstone,
+      ReservedForAbilityType = AbilityType.PersonalDefensive,
     },
     new()
     {
@@ -121,6 +122,20 @@ var solverService = new SolverService
       Modifier = Modifier.Control,
       Convenience = Convenience.Average,
       ReservedForAbilityType = AbilityType.PersonalDefensive,
+    },
+    new()
+    {
+      Key = "4",
+      Modifier = Modifier.Control,
+      Convenience = Convenience.Average,
+      ReservedForAbilityType = AbilityType.HealingPotion,
+    },
+    new()
+    {
+      Key = "5",
+      Modifier = Modifier.Control,
+      Convenience = Convenience.Average,
+      ReservedForAbilityType = AbilityType.Healthstone,
     },
     new()
     {

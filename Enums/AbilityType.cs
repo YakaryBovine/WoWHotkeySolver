@@ -14,5 +14,6 @@ public enum AbilityType
   CombatPotion,
   OpieMenu,
   Taunt,
-  AoE
+  AoE,
+  Trinket
 }

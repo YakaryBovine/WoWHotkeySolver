@@ -27,17 +27,12 @@ public static class Shadow
       },
       new()
       {
-        Name = "Mind Flay",
+        Name = "Mind Flay/Flash Heal",
         Frequency = Frequency.Constant
       },
       new()
       {
-        Name = "Mind Blast",
-        Frequency = Frequency.Constant
-      },
-      new()
-      {
-        Name = "Vampiric Touch",
+        Name = "Vampiric Touch/Power Word: Shield",
         Frequency = Frequency.Frequent
       },
       new()
@@ -50,6 +45,28 @@ public static class Shadow
         Name = "Void Torrent",
         Frequency = Frequency.Sometimes
       },
+      new()
+      {
+        Name = "Shadow Word: Death",
+        Frequency = Frequency.Sometimes
+      },
+      new()
+      {
+        Name = "Shadowfiend",
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Shadow Crash",
+        Frequency = Frequency.Frequent,
+        AbilityType = AbilityType.AoE
+      },
+      new()
+      {
+        Name = "Silence/Purify Disease",
+        Frequency = Frequency.Frequent,
+        AbilityType = AbilityType.Interrupt
+      }
     };
     abilities.AddRange(Priest.GetAbilities());
     return abilities;
