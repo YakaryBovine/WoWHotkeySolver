@@ -10,81 +10,14 @@ public static class Priest
     {
       new()
       {
-        Name = "Smite",
-        Frequency = Frequency.Constant
-      },
-      new()
-      {
-        Name = "Flash Heal",
-        Frequency = Frequency.Constant
-      },
-      new()
-      {
         Name = "Shadow Word: Pain",
         Frequency = Frequency.Frequent
-      },
-      new()
-      {
-        Name = "Circle of Healing",
-        Frequency = Frequency.Frequent
-      },
-      new()
-      {
-        Name = "Holy Fire",
-        Frequency = Frequency.Frequent
-      },
-      new()
-      {
-        Name = "Holy Word: Chastise",
-        Frequency = Frequency.Sometimes
-      },
-      new()
-      {
-        Name = "Holy Word: Sanctify",
-        Frequency = Frequency.Sometimes
-      },
-      new()
-      {
-        Name = "Purify",
-        Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.Dispel
-      },
-      new()
-      {
-        Name = "Holy Word: Serenity",
-        Frequency = Frequency.Sometimes
-      },
-      new()
-      {
-        Name = "Prayer of Healing",
-        Frequency = Frequency.Rarely
-      },
-      new()
-      {
-        Name = "Prayer of Mending",
-        Frequency = Frequency.Constant
-      },
-      new()
-      {
-        Name = "Holy Nova",
-        Frequency = Frequency.Constant
-      },
-      new()
-      {
-        Name = "Divine Hymn",
-        Frequency = Frequency.Rarely
       },
       new()
       {
         Name = "Psychic Scream",
         Frequency = Frequency.Sometimes,
         AbilityType = AbilityType.Stun
-      },
-      new()
-      {
-        Name = "Guardian Spirit",
-        Frequency = Frequency.Sometimes,
-        AbilityType = AbilityType.ExternalDefensive
       },
       new()
       {
@@ -122,35 +55,11 @@ public static class Priest
         Name = "Power Word: Shield",
         Frequency = Frequency.AlmostNever
       },
-      new()
-      {
-        Name = "Renew",
-        Frequency = Frequency.AlmostNever
-      },
+
       new()
       {
         Name = "Shadowfiend",
         Frequency = Frequency.Rarely
-      },
-      new()
-      {
-        Name = "Lightwell",
-        Frequency = Frequency.Rarely
-      },
-      new()
-      {
-        Name = "Symbol of Hope",
-        Frequency = Frequency.Rarely
-      },
-      new()
-      {
-        Name = "Divine Word",
-        Frequency = Frequency.Sometimes
-      },
-      new()
-      {
-        Name = "Power Word: Life",
-        Frequency = Frequency.Sometimes
       },
       new()
       {
@@ -171,11 +80,6 @@ public static class Priest
       {
         Name = "Halo/Divine Star",
         Frequency = Frequency.Frequent
-      },
-      new()
-      {
-        Name = "Apotheosis/Holy Word: Salvation",
-        Frequency = Frequency.Rarely
       },
       new()
       {
