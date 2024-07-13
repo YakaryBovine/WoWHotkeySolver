@@ -16,11 +16,6 @@ public static class Shadow
       },
       new()
       {
-        Name = "Devouring Plague",
-        Frequency = Frequency.Frequent
-      },
-      new()
-      {
         Name = "Dispersion",
         Frequency = Frequency.Sometimes,
         AbilityType = AbilityType.PersonalDefensive
@@ -32,11 +27,6 @@ public static class Shadow
       },
       new()
       {
-        Name = "Vampiric Touch/Power Word: Shield",
-        Frequency = Frequency.Frequent
-      },
-      new()
-      {
         Name = "Void Eruption/Void Bolt",
         Frequency = Frequency.Sometimes
       },
@@ -44,16 +34,6 @@ public static class Shadow
       {
         Name = "Void Torrent",
         Frequency = Frequency.Sometimes
-      },
-      new()
-      {
-        Name = "Shadow Word: Death",
-        Frequency = Frequency.Sometimes
-      },
-      new()
-      {
-        Name = "Shadowfiend",
-        Frequency = Frequency.Rarely
       },
       new()
       {
