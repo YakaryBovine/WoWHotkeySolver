@@ -13,6 +13,11 @@ public sealed class PriestCore : ICharacterComponent
     {
       new()
       {
+        Name = "Mind Flay/Flash Heal/Smite",
+        Frequency = Frequency.Constant
+      },
+      new()
+      {
         Name = "Shadow Word: Pain/Vampiric Touch/Power Word: Shield",
         Frequency = Frequency.Frequent
       },
@@ -24,7 +29,7 @@ public sealed class PriestCore : ICharacterComponent
       new()
       {
         Name = "Psychic Scream",
-        Frequency = Frequency.Sometimes,
+        Frequency = Frequency.Infrequent,
         AbilityType = AbilityType.Stun
       },
       new()
@@ -42,7 +47,7 @@ public sealed class PriestCore : ICharacterComponent
       new()
       {
         Name = "Mass Dispel",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -52,12 +57,7 @@ public sealed class PriestCore : ICharacterComponent
       new()
       {
         Name = "Dispel Magic",
-        Frequency = Frequency.Sometimes
-      },
-      new()
-      {
-        Name = "Shackle Undead",
-        Frequency = Frequency.AlmostNever
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -72,18 +72,24 @@ public sealed class PriestCore : ICharacterComponent
       new()
       {
         Name = "Desperate Prayer",
-        Frequency = Frequency.Sometimes,
+        Frequency = Frequency.Infrequent,
         AbilityType = AbilityType.PersonalDefensive
       },
       new()
       {
         Name = "Shadow Word: Death/Power Word: Life",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Vampiric Embrace",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Purify/Purify Disease/Silence",
+        Frequency = Frequency.Frequent,
+        AbilityType = AbilityType.Interrupt
       }
     };
     return abilities;

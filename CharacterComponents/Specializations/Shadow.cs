@@ -13,24 +13,14 @@ public sealed class Shadow : ICharacterComponent
     {
       new()
       {
-        Name = "Mindgames",
-        Frequency = Frequency.Sometimes
-      },
-      new()
-      {
         Name = "Dispersion",
-        Frequency = Frequency.Sometimes,
+        Frequency = Frequency.Infrequent,
         AbilityType = AbilityType.PersonalDefensive
       },
       new()
       {
-        Name = "Mind Flay/Flash Heal",
-        Frequency = Frequency.Constant
-      },
-      new()
-      {
         Name = "Void Eruption/Void Bolt",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -40,7 +30,7 @@ public sealed class Shadow : ICharacterComponent
       new()
       {
         Name = "Void Torrent",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Semifrequent
       },
       new()
       {
@@ -50,9 +40,8 @@ public sealed class Shadow : ICharacterComponent
       },
       new()
       {
-        Name = "Silence/Purify Disease",
-        Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.Interrupt
+        Name = "Shackle Undead",
+        Frequency = Frequency.AlmostNever
       }
     };
     return abilities;

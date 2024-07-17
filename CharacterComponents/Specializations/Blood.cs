@@ -24,7 +24,7 @@ public sealed class Blood : ICharacterComponent
       new()
       {
         Name = "Dark Command",
-        Frequency = Frequency.Sometimes,
+        Frequency = Frequency.Infrequent,
         AbilityType = AbilityType.Taunt
       },
       new()
@@ -40,7 +40,7 @@ public sealed class Blood : ICharacterComponent
       new()
       {
         Name = "Dancing Rune Weapon",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -55,7 +55,7 @@ public sealed class Blood : ICharacterComponent
       new()
       {
         Name = "Vampiric Blood",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
     };
     return abilities;

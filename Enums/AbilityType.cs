@@ -3,7 +3,6 @@
 public enum AbilityType
 {
   Other,
-  Dispel,
   Interrupt,
   Movement,
   Stun,

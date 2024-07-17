@@ -24,7 +24,7 @@ public sealed class Enhancement : ICharacterComponent
       new()
       {
         Name = "Chain Lightning",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -39,7 +39,7 @@ public sealed class Enhancement : ICharacterComponent
       new()
       {
         Name = "Feral Spirit",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -54,7 +54,7 @@ public sealed class Enhancement : ICharacterComponent
       new()
       {
         Name = "Sundering",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -69,17 +69,17 @@ public sealed class Enhancement : ICharacterComponent
       new()
       {
         Name = "Primordial Wave",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Windfury Totem",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Doom Winds",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       }
     };
     return abilities;

@@ -29,23 +29,12 @@ public sealed class Holy : ICharacterComponent
       new()
       {
         Name = "Divine Word",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Power Word: Life",
-        Frequency = Frequency.Sometimes
-      },
-      new()
-      {
-        Name = "Renew",
-        Frequency = Frequency.AlmostNever
-      },
-      new()
-      {
-        Name = "Guardian Spirit",
-        Frequency = Frequency.Sometimes,
-        AbilityType = AbilityType.ExternalDefensive
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -59,17 +48,6 @@ public sealed class Holy : ICharacterComponent
       },
       new()
       {
-        Name = "Purify",
-        Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.Dispel
-      },
-      new()
-      {
-        Name = "Holy Word: Serenity",
-        Frequency = Frequency.Sometimes
-      },
-      new()
-      {
         Name = "Prayer of Healing",
         Frequency = Frequency.Rarely
       },
@@ -80,18 +58,14 @@ public sealed class Holy : ICharacterComponent
       },
       new()
       {
-        Name = "Holy Fire",
-        Frequency = Frequency.Frequent
-      },
-      new()
-      {
-        Name = "Holy Word: Chastise",
-        Frequency = Frequency.Sometimes
+        Name = "Holy Word: Chastise/Guardian Spirit",
+        Frequency = Frequency.Infrequent,
+        AbilityType = AbilityType.ExternalDefensive
       },
       new()
       {
         Name = "Holy Word: Sanctify",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -100,14 +74,9 @@ public sealed class Holy : ICharacterComponent
       },
       new()
       {
-        Name = "Smite",
-        Frequency = Frequency.Constant
-      },
-      new()
-      {
-        Name = "Flash Heal",
-        Frequency = Frequency.Constant
-      },
+        Name = "Shackle Undead/Holy Word: Serenity",
+        Frequency = Frequency.Infrequent
+      }
     };
     return abilities;
   }

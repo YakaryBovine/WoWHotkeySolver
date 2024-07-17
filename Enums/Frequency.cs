@@ -6,8 +6,9 @@
 public enum Frequency
 {
   Constant,
+  Semifrequent,
   Frequent,
-  Sometimes,
+  Infrequent,
   Rarely,
   AlmostNever
 }

@@ -17,6 +17,6 @@ public sealed class Hotkey
     
   public override string ToString()
   {
-    return Modifier.ToFriendlyString() + " " + Key;
+    return $"{Modifier.ToFriendlyString()}{Key}";
   }
 }

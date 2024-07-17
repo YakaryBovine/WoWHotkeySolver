@@ -40,7 +40,7 @@ public sealed class Elemental : ICharacterComponent
       new()
       {
         Name = "Spiritwalker's Grace",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -55,37 +55,37 @@ public sealed class Elemental : ICharacterComponent
       new()
       {
         Name = "Fire Elemental",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Primordial Wave",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Stormkeeper",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Elemental Blast",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Icefury",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Frost Shock",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Nature's Swiftness",
-        Frequency = Frequency.Sometimes
+        Frequency = Frequency.Infrequent
       }
     };
     return abilities;

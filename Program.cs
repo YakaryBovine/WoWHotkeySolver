@@ -48,8 +48,7 @@ var solverService = new SolverService
     new()
     {
       Key = "r",
-      Convenience = Convenience.Incredible,
-      ReservedForAbilityType = AbilityType.Dispel
+      Convenience = Convenience.Incredible
     },
     new()
     {
