@@ -5,7 +5,7 @@ using WoWHotkeySolver.Specializations;
 
 var solverService = new SolverService
 {
-  Abilities = Shadow.GetAbilities(),
+  Abilities = new Shadow().GetAbilities(),
   Hotkeys = new List<Hotkey>
   {
     new()

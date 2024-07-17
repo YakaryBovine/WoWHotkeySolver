@@ -1,11 +1,12 @@
 ﻿using WoWHotkeySolver.CharacterClasses;
 using WoWHotkeySolver.Enums;
+using WoWHotkeySolver.Models;
 
 namespace WoWHotkeySolver.Specializations;
 
-public static class Shadow
+public sealed class Shadow : ISpecialization
 {
-  public static List<Ability> GetAbilities()
+  public List<Ability> GetAbilities()
   {
     var abilities = new List<Ability>
     {

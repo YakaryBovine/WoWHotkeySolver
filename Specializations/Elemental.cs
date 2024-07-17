@@ -1,11 +1,12 @@
 ﻿using WoWHotkeySolver.CharacterClasses;
 using WoWHotkeySolver.Enums;
+using WoWHotkeySolver.Models;
 
 namespace WoWHotkeySolver.Specializations;
 
-public static class Elemental
+public sealed class Elemental : ISpecialization
 {
-  public static List<Ability> GetAbilities()
+  public List<Ability> GetAbilities()
   {
     var abilities = new List<Ability>
     {
