@@ -1,5 +1,4 @@
-﻿using WoWHotkeySolver;
-using WoWHotkeySolver.CharacterClasses;
+﻿using WoWHotkeySolver.CharacterClasses;
 using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 using WoWHotkeySolver.Services;
@@ -38,6 +37,17 @@ var solverService = new SolverService
     {
       Key = "4",
       Convenience = Convenience.Average
+    },
+    new()
+    {
+      Key = "5",
+      Convenience = Convenience.Bad,
+      ReservedForAbilityType = AbilityType.Movement
+    },
+    new()
+    {
+      Key = "6",
+      Convenience = Convenience.Bad
     },
     new()
     {
@@ -91,14 +101,8 @@ var solverService = new SolverService
     },
     new()
     {
-      Key = "5",
-      Convenience = Convenience.Bad,
-      ReservedForAbilityType = AbilityType.Movement
-    },
-    new()
-    {
       Key = "`",
-      Convenience = Convenience.Terrible,
+      Convenience = Convenience.Atrocious,
       AllowShiftModifier = false,
       ReservedForAbilityType = AbilityType.Trinket
     },
@@ -106,42 +110,42 @@ var solverService = new SolverService
     {
       Key = "1",
       Modifier = Modifier.Control,
-      Convenience = Convenience.Average,
+      Convenience = Convenience.Atrocious,
       ReservedForAbilityType = AbilityType.PersonalDefensive,
     },
     new()
     {
       Key = "2",
       Modifier = Modifier.Control,
-      Convenience = Convenience.Average,
+      Convenience = Convenience.Atrocious,
       ReservedForAbilityType = AbilityType.PersonalDefensive,
     },
     new()
     {
       Key = "3",
       Modifier = Modifier.Control,
-      Convenience = Convenience.Average,
+      Convenience = Convenience.Atrocious,
       ReservedForAbilityType = AbilityType.PersonalDefensive,
     },
     new()
     {
       Key = "4",
       Modifier = Modifier.Control,
-      Convenience = Convenience.Average,
+      Convenience = Convenience.Atrocious,
       ReservedForAbilityType = AbilityType.HealingPotion,
     },
     new()
     {
       Key = "5",
       Modifier = Modifier.Control,
-      Convenience = Convenience.Average,
+      Convenience = Convenience.Atrocious,
       ReservedForAbilityType = AbilityType.Healthstone,
     },
     new()
     {
       Key = "6",
       Modifier = Modifier.Control,
-      Convenience = Convenience.Average,
+      Convenience = Convenience.Atrocious,
       ReservedForAbilityType = AbilityType.CombatPotion,
     },
     new()
@@ -153,9 +157,14 @@ var solverService = new SolverService
     },
     new()
     {
-      Key = "h",
+      Key = "y",
       Convenience = Convenience.Bad
-    }
+    },
+    new()
+    {
+      Key = "n",
+      Convenience = Convenience.Bad
+    },
   }
 };
 
