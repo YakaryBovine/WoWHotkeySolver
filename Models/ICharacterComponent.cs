@@ -1,6 +1,8 @@
 ﻿namespace WoWHotkeySolver.Models;
 
-public interface ISpecialization
+public interface ICharacterComponent
 {
+  public string Name { get; }
+  
   public List<Ability> GetAbilities();
 }

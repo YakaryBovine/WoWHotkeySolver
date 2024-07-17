@@ -1,11 +1,12 @@
-﻿using WoWHotkeySolver.CharacterClasses;
-using WoWHotkeySolver.Enums;
+﻿using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.Specializations;
+namespace WoWHotkeySolver.CharacterComponents.Specializations;
 
-public sealed class Holy : ISpecialization
+public sealed class Holy : ICharacterComponent
 {
+  public string Name => "Holy";
+  
   public List<Ability> GetAbilities()
   {
     var abilities = new List<Ability>
@@ -108,7 +109,6 @@ public sealed class Holy : ISpecialization
         Frequency = Frequency.Constant
       },
     };
-    abilities.AddRange(Priest.GetAbilities());
     return abilities;
   }
 }

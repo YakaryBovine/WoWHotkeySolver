@@ -1,31 +1,44 @@
 ﻿using WoWHotkeySolver.Enums;
+using WoWHotkeySolver.Models;
 
 namespace WoWHotkeySolver.Services;
 
 public sealed class SolverService
 {
-  public required List<Ability> Abilities { get; init; }
+  public required ICharacterClass Class { get; init; }
   
   public required List<Hotkey> Hotkeys { get; init; }
 
-  public string Solve()
+  public void SolveAll()
+  {
+    foreach (var specialization in Class.Specializations)
+    {
+      Solve(Class.Core, specialization);
+    }
+  }
+
+  private void Solve(ICharacterComponent core, ICharacterComponent specialization)
   {
     var transformedHotkeys = TransformAndOrderHotkeys();
-    
-    if (Abilities.Count > transformedHotkeys.Count)
-      return $"There aren't enough hotkeys ({transformedHotkeys.Count}) to cast that many abilities ({Abilities.Count}).";
+
+    var abilities = specialization.GetAbilities();
+    abilities.AddRange(core.GetAbilities());
+    if (specialization.GetAbilities().Count > transformedHotkeys.Count)
+    {
+      throw new InvalidOperationException($"There aren't enough hotkeys ({transformedHotkeys.Count}) to cast that many abilities ({abilities.Count}).");
+    }
 
     var solution = new HotkeySolution();
     var abilityHotkeyPool = new AbilityHotkeyPool
     {
-      Abilities = Abilities.OrderBy(x => x.Frequency).ToList(),
+      Abilities = abilities.OrderBy(x => x.Frequency).ToList(),
       Hotkeys = transformedHotkeys
     };
 
     AllocateReservedHotkeys(abilityHotkeyPool, solution);
     AllocateUnreservedHotkeys(abilityHotkeyPool, solution);
-    
-    return solution.ToString();
+
+    Console.WriteLine(solution.ToString());
   }
 
   private static void AllocateReservedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolution solution)

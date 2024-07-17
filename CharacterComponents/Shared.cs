@@ -1,10 +1,13 @@
 ﻿using WoWHotkeySolver.Enums;
+using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.CharacterClasses;
+namespace WoWHotkeySolver.CharacterComponents;
 
-public static class Shared
+public sealed class Shared : ICharacterComponent
 {
-  public static List<Ability> GetAbilities()
+  public string Name => "Shared";
+  
+  public List<Ability> GetAbilities()
   {
     return new List<Ability>
     {

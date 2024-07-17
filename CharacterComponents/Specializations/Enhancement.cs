@@ -1,11 +1,12 @@
-﻿using WoWHotkeySolver.CharacterClasses;
-using WoWHotkeySolver.Enums;
+﻿using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.Specializations;
+namespace WoWHotkeySolver.CharacterComponents.Specializations;
 
-public sealed class Enhancement : ISpecialization
+public sealed class Enhancement : ICharacterComponent
 {
+  public string Name => "Enhancement";
+  
   public List<Ability> GetAbilities()
   {
     var abilities = new List<Ability>
@@ -81,7 +82,6 @@ public sealed class Enhancement : ISpecialization
         Frequency = Frequency.Sometimes
       }
     };
-    abilities.AddRange(Shaman.GetAbilities());
     return abilities;
   }
 }

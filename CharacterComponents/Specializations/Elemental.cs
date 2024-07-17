@@ -1,13 +1,15 @@
-﻿using WoWHotkeySolver.CharacterClasses;
-using WoWHotkeySolver.Enums;
+﻿using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.Specializations;
+namespace WoWHotkeySolver.CharacterComponents.Specializations;
 
-public sealed class Elemental : ISpecialization
+public sealed class Elemental : ICharacterComponent
 {
+  public string Name => "Elemental";
+  
   public List<Ability> GetAbilities()
   {
+    
     var abilities = new List<Ability>
     {
       new()
@@ -86,7 +88,6 @@ public sealed class Elemental : ISpecialization
         Frequency = Frequency.Sometimes
       }
     };
-    abilities.AddRange(Shaman.GetAbilities());
     return abilities;
   }
 }

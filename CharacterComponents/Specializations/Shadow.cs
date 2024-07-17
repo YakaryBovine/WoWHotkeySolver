@@ -1,11 +1,12 @@
-﻿using WoWHotkeySolver.CharacterClasses;
-using WoWHotkeySolver.Enums;
+﻿using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.Specializations;
+namespace WoWHotkeySolver.CharacterComponents.Specializations;
 
-public sealed class Shadow : ISpecialization
+public sealed class Shadow : ICharacterComponent
 {
+  public string Name => "Shadow";
+
   public List<Ability> GetAbilities()
   {
     var abilities = new List<Ability>
@@ -54,7 +55,6 @@ public sealed class Shadow : ISpecialization
         AbilityType = AbilityType.Interrupt
       }
     };
-    abilities.AddRange(Priest.GetAbilities());
     return abilities;
   }
 }

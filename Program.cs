@@ -1,11 +1,11 @@
 ﻿using WoWHotkeySolver;
+using WoWHotkeySolver.CharacterClasses;
 using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Services;
-using WoWHotkeySolver.Specializations;
 
 var solverService = new SolverService
 {
-  Abilities = new Shadow().GetAbilities(),
+  Class = new Priest(),
   Hotkeys = new List<Hotkey>
   {
     new()
@@ -159,4 +159,4 @@ var solverService = new SolverService
   }
 };
 
-Console.WriteLine(solverService.Solve());
+solverService.SolveAll();

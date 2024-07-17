@@ -1,11 +1,12 @@
-﻿using WoWHotkeySolver.CharacterClasses;
-using WoWHotkeySolver.Enums;
+﻿using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.Specializations;
+namespace WoWHotkeySolver.CharacterComponents.Specializations;
 
-public sealed class Blood : ISpecialization
+public sealed class Blood : ICharacterComponent
 {
+  public string Name => "Blood";
+  
   public List<Ability> GetAbilities()
   {
     var abilities = new List<Ability>
@@ -57,7 +58,6 @@ public sealed class Blood : ISpecialization
         Frequency = Frequency.Sometimes
       },
     };
-    abilities.AddRange(DeathKnight.GetAbilities());
     return abilities;
   }
 }
