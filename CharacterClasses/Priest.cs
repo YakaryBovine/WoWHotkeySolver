@@ -76,6 +76,11 @@ public static class Priest
       {
         Name = "Shadow Word: Death/Power Word: Life",
         Frequency = Frequency.Sometimes
+      },
+      new()
+      {
+        Name = "Vampiric Embrace",
+        Frequency = Frequency.Sometimes
       }
     };
     abilities.AddRange(Shared.GetAbilities());

@@ -32,6 +32,11 @@ public static class Shadow
       },
       new()
       {
+        Name = "Devouring Plague",
+        Frequency = Frequency.Frequent
+      },
+      new()
+      {
         Name = "Void Torrent",
         Frequency = Frequency.Sometimes
       },
