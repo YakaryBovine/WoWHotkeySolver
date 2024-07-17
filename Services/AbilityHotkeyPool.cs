@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using WoWHotkeySolver.Enums;
+using WoWHotkeySolver.Models;
 
 namespace WoWHotkeySolver.Services;
 
@@ -8,14 +9,24 @@ namespace WoWHotkeySolver.Services;
 /// </summary>
 public sealed class AbilityHotkeyPool
 {
-  public required List<Ability> Abilities { get; init; }
-  
-  public required List<Hotkey> Hotkeys { get; init; }
+  public List<ComponentAbility> ComponentAbilities { get; private set; } = new();
 
-  public void Remove(Ability ability, Hotkey hotkey)
+  public List<Hotkey> Hotkeys { get; } = new();
+
+  public void Remove(ComponentAbility ability, Hotkey hotkey)
   {
-    Abilities.Remove(ability);
+    ComponentAbilities.Remove(ability);
     Hotkeys.Remove(hotkey);
+  }
+
+  public void AddAbilities(ICharacterComponent component)
+  {
+    ComponentAbilities.AddRange(component.GetAbilities().Select(x => new ComponentAbility
+    {
+      Ability = x,
+      Source = component
+    }));
+    ComponentAbilities = ComponentAbilities.OrderBy(x => x.Ability.Frequency).ToList();
   }
   
   /// <summary>

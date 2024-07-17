@@ -1,6 +1,6 @@
 ﻿using WoWHotkeySolver.Enums;
 
-namespace WoWHotkeySolver;
+namespace WoWHotkeySolver.Models;
 
 public sealed class Ability
 {
