@@ -53,12 +53,6 @@ public sealed class Holy : ICharacterComponent
       },
       new()
       {
-        Name = "Holy Word: Chastise/Guardian Spirit",
-        Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.ExternalDefensive
-      },
-      new()
-      {
         Name = "Holy Word: Sanctify",
         Frequency = Frequency.Infrequent,
         AbilityType = AbilityType.AoE
@@ -70,8 +64,8 @@ public sealed class Holy : ICharacterComponent
       },
       new()
       {
-        Name = "Shackle Undead/Holy Word: Serenity",
-        Frequency = Frequency.Infrequent
+        Name = "Holy Word: Chastise/Holy Word: Serenity",
+        Frequency = Frequency.Semifrequent
       }
     };
     return abilities;

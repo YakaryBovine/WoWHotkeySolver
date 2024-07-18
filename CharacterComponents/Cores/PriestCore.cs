@@ -23,7 +23,7 @@ public sealed class PriestCore : ICharacterComponent
       },
       new()
       {
-        Name = "Mind Blast/Holy Fire/Power Infusion",
+        Name = "Mind Blast/Holy Fire/Heal",
         Frequency = Frequency.Constant
       },
       new()
@@ -47,16 +47,16 @@ public sealed class PriestCore : ICharacterComponent
       new()
       {
         Name = "Mass Dispel",
-        Frequency = Frequency.Infrequent
-      },
-      new()
-      {
-        Name = "Shadowfiend/Leap of Faith",
         Frequency = Frequency.Rarely
       },
       new()
       {
-        Name = "Dispel Magic",
+        Name = "Shadowfiend/Power Infusion",
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Dispel Magic/Leap",
         Frequency = Frequency.Infrequent
       },
       new()
@@ -90,6 +90,12 @@ public sealed class PriestCore : ICharacterComponent
         Name = "Purify/Purify Disease/Silence",
         Frequency = Frequency.Frequent,
         AbilityType = AbilityType.Interrupt
+      },
+      new()
+      {
+        Name = "Shackle Undead/Guardian Spirit",
+        Frequency = Frequency.Infrequent,
+        AbilityType = AbilityType.ExternalDefensive
       }
     };
     abilities.AddRange(new Shared().GetAbilities());

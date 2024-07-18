@@ -37,11 +37,6 @@ public sealed class Shadow : ICharacterComponent
         Name = "Shadow Crash",
         Frequency = Frequency.Frequent,
         AbilityType = AbilityType.AoE
-      },
-      new()
-      {
-        Name = "Shackle Undead",
-        Frequency = Frequency.AlmostNever
       }
     };
     return abilities;
