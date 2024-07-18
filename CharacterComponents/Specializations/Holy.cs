@@ -33,13 +33,8 @@ public sealed class Holy : ICharacterComponent
       },
       new()
       {
-        Name = "Power Word: Life",
-        Frequency = Frequency.Infrequent
-      },
-      new()
-      {
         Name = "Holy Nova",
-        Frequency = Frequency.Constant
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -54,7 +49,7 @@ public sealed class Holy : ICharacterComponent
       new()
       {
         Name = "Prayer of Mending",
-        Frequency = Frequency.Constant
+        Frequency = Frequency.Frequent
       },
       new()
       {
@@ -65,7 +60,8 @@ public sealed class Holy : ICharacterComponent
       new()
       {
         Name = "Holy Word: Sanctify",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        AbilityType = AbilityType.AoE
       },
       new()
       {

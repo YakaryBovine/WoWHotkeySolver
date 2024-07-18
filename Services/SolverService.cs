@@ -14,6 +14,7 @@ public sealed class SolverService
     var solution = new HotkeySolution();
     var abilityHotkeyPool = new AbilityHotkeyPool();
     abilityHotkeyPool.Hotkeys.AddRange(TransformAndOrderHotkeys());
+    abilityHotkeyPool.WriteHotkeys();
     //Order the specialization with the most reserved abilities first to ensure that core abilities can't take the
     //hotkeys they need.
     var orderedSpecializations = Class.Specializations

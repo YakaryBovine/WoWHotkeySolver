@@ -38,4 +38,21 @@ public sealed class AbilityHotkeyPool
       x.ReservedForAbilityType != AbilityType.Other && x.ReservedForAbilityType == ability.AbilityType);
     return hotkey != null;
   }
+
+  /// <summary>
+  /// Print all hotkeys to console.
+  /// </summary>
+  public void WriteHotkeys()
+  {
+    Console.WriteLine("----Hotkeys----");
+    var orderedHotkeys = Hotkeys
+      .OrderBy(x => x.Convenience)
+      .ThenBy(x => x.Modifier)
+      .ThenBy(x => x.Key);
+    foreach (var hotkey in orderedHotkeys)
+    {
+      Console.WriteLine(hotkey.ToString());
+    }
+    Console.WriteLine("");
+  }
 }

@@ -92,6 +92,7 @@ public sealed class PriestCore : ICharacterComponent
         AbilityType = AbilityType.Interrupt
       }
     };
+    abilities.AddRange(new Shared().GetAbilities());
     return abilities;
   }
 }
