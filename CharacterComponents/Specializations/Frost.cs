@@ -29,7 +29,8 @@ public sealed class Frost : ICharacterComponent
       new()
       {
         Name = "Frost Strike",
-        Frequency = Frequency.Constant
+        Frequency = Frequency.Constant,
+        AbilityType = AbilityType.MainSpender
       },
       new()
       {
@@ -39,6 +40,11 @@ public sealed class Frost : ICharacterComponent
       new()
       {
         Name = "Howling Blast",
+        Frequency = Frequency.Constant
+      },
+      new()
+      {
+        Name = "Glacial Advance",
         Frequency = Frequency.Frequent
       },
       new()

@@ -5,7 +5,7 @@ namespace WoWHotkeySolver.CharacterComponents.Specializations;
 
 public sealed class Unholy : ICharacterComponent
 {
-  public string Name => "Frost";
+  public string Name => "Unholy";
   
   public List<Ability> GetAbilities()
   {
