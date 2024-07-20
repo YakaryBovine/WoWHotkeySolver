@@ -66,8 +66,8 @@ public sealed class SolverService
     {
       if (abilityHotkeyPool.TryGetReservedHotkey(componentAbility.Ability, out var hotkey))
       {
-        abilityHotkeyPool.Remove(componentAbility, hotkey);
-        solutionSet.AddHotkey(componentAbility, hotkey);
+        abilityHotkeyPool.Remove(componentAbility, hotkey.Value);
+        solutionSet.AddHotkey(componentAbility, hotkey.Value);
       }
     }
   }

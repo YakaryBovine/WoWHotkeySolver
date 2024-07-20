@@ -30,7 +30,7 @@ public sealed class HotkeySolutionSet
   {
     var solutionKvp = _hotkeys.FirstOrDefault(x => x.Key.Ability.Equals(ability));
     solution = null;
-    if (solutionKvp.Key == null || solutionKvp.Value == null) 
+    if (solutionKvp.Key == null)
       return false;
     
     solution = (solutionKvp.Key, solutionKvp.Value);
