@@ -23,6 +23,11 @@ public sealed class Blood : ICharacterComponent
       },
       new()
       {
+        Name = "Reaper's Mark",
+        Frequency = Frequency.Frequent
+      },
+      new()
+      {
         Name = "Dark Command",
         Frequency = Frequency.Infrequent,
         AbilityType = AbilityType.Taunt
@@ -30,7 +35,8 @@ public sealed class Blood : ICharacterComponent
       new()
       {
         Name = "Death Strike",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Frequent,
+        AbilityType = AbilityType.MainSpender
       },
       new()
       {
@@ -50,12 +56,18 @@ public sealed class Blood : ICharacterComponent
       new()
       {
         Name = "Tombstone",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Infrequent
+      },
+      new()
+      {
+        Name = "Bonestorm",
+        Frequency = Frequency.Infrequent
       },
       new()
       {
         Name = "Vampiric Blood",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        AbilityType = AbilityType.PersonalDefensive
       },
     };
     return abilities;

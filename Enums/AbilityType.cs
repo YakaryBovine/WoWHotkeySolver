@@ -14,5 +14,8 @@ public enum AbilityType
   OpieMenu,
   Taunt,
   AoE,
-  Trinket
+  Trinket,
+  
+  /// <summary>The main ability you use to spend your core resource.</summary>
+  MainSpender
 }
