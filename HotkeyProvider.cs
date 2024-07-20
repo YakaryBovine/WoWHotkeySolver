@@ -72,7 +72,8 @@ public static class HotkeyProvider
       {
         Key = "g",
         Convenience = Convenience.Average,
-        ReservedForAbilityType = AbilityType.AoE
+        ReservedForAbilityType = AbilityType.AoE,
+        AllowShiftModifier = false
       },
       new()
       {
@@ -151,6 +152,13 @@ public static class HotkeyProvider
         Modifier = Modifier.Shift,
         Convenience = Convenience.Bad,
         ReservedForAbilityType = AbilityType.OpieMenu,
+      },
+      new()
+      {
+        Key = "g",
+        Modifier = Modifier.Shift,
+        Convenience = Convenience.Atrocious,
+        ReservedForAbilityType = AbilityType.AoETargeted,
       },
       new()
       {

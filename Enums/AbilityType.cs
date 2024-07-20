@@ -13,8 +13,13 @@ public enum AbilityType
   CombatPotion,
   OpieMenu,
   Taunt,
-  AoE,
   Trinket,
+  
+  /// <summary>An ability that deals damage or heals in a radius.</summary>
+  AoE,
+  
+  /// <summary>The same as <see cref="AoE"/>, but the ground-targeted version.</summary>
+  AoETargeted,
   
   /// <summary>The main ability you use to spend your core resource.</summary>
   MainSpender

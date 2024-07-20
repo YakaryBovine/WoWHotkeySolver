@@ -40,9 +40,15 @@ public sealed class DeathKnightCore : ICharacterComponent
       },
       new()
       {
-        Name = "Death and Decay",
+        Name = "Death and Decay (self)",
         Frequency = Frequency.Infrequent,
         AbilityType = AbilityType.AoE
+      },
+      new()
+      {
+        Name = "Death and Decay (cursor)",
+        Frequency = Frequency.Infrequent,
+        AbilityType = AbilityType.AoETargeted
       },
       new()
       {
