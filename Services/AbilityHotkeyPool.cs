@@ -15,8 +15,15 @@ public sealed class AbilityHotkeyPool
 
   public void Remove(ComponentAbility ability, Hotkey hotkey)
   {
-    ComponentAbilities.Remove(ability);
-    Hotkeys.Remove(hotkey);
+    if (!ComponentAbilities.Remove(ability))
+    {
+      throw new InvalidOperationException($"{ability} isn't in the pool.");
+    }
+    
+    if (!Hotkeys.Remove(hotkey))
+    {
+      throw new InvalidOperationException($"{hotkey} isn't in the pool.");
+    }
   }
 
   public void AddAbilities(ICharacterComponent component)
