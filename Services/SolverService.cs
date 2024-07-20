@@ -91,7 +91,7 @@ public sealed class SolverService
     hotkeys.AddRange(Hotkeys.Where(x => x.AllowShiftModifier && x.Modifier == Modifier.None).Select(h => new Hotkey
     {
       Key = $"{h.Key}",
-      Convenience = h.Convenience + 100,
+      Convenience = h.Convenience.ApplyModifierPenalty(),
       AllowShiftModifier = false,
       Modifier = Modifier.Shift,
       ReservedForAbilityType = AbilityType.Other
