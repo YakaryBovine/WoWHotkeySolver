@@ -74,12 +74,6 @@ public sealed class DeathKnightCore : ICharacterComponent
       },
       new()
       {
-        Name = "Anti-Magic Shell",
-        Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
-      },
-      new()
-      {
         Name = "Mind Freeze",
         Frequency = Frequency.Frequent,
         AbilityType = AbilityType.Interrupt

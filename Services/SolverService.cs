@@ -20,7 +20,7 @@ public sealed class SolverService
         .OrderBy(x => x.GetAbilities().Count(ability => ability.AbilityType != AbilityType.Other))
         .ToList();
     
-    Solve(solution, abilityHotkeyPool, orderedSpecializations.Last(), Class.Core);
+    Solve(solution, abilityHotkeyPool, Class.Core, orderedSpecializations.Last());
 
     foreach (var specialization in orderedSpecializations.SkipLast(1))
     {

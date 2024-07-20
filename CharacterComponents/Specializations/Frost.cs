@@ -61,6 +61,11 @@ public sealed class Frost : ICharacterComponent
         Name = "Breath of Sindragosa",
         Frequency = Frequency.Rarely
       },
+      new()
+      {
+        Name = "Reaper's Mark",
+        Frequency = Frequency.Frequent
+      }
     };
     return abilities;
   }
