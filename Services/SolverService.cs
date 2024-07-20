@@ -11,7 +11,7 @@ public sealed class SolverService
 
   public void SolveAll()
   {
-    var solution = new HotkeySolution();
+    var solution = new HotkeySolutionSet();
     var abilityHotkeyPool = new AbilityHotkeyPool();
     abilityHotkeyPool.Hotkeys.AddRange(TransformAndOrderHotkeys());
     //Order the specialization with the most reserved abilities first to ensure that core abilities can't take the
@@ -34,35 +34,52 @@ public sealed class SolverService
     Console.WriteLine(solution.ToString());
   }
 
-  private static void Solve(HotkeySolution solution, AbilityHotkeyPool abilityHotkeyPool, params ICharacterComponent[] components)
+  private static void Solve(HotkeySolutionSet solutionSet, AbilityHotkeyPool abilityHotkeyPool, params ICharacterComponent[] components)
   {
     foreach (var component in components)
       abilityHotkeyPool.AddAbilities(component);
     
-    AllocateReservedHotkeys(abilityHotkeyPool, solution);
-    AllocateUnreservedHotkeys(abilityHotkeyPool, solution);
+    AllocateAlreadySolvedHotkeys(abilityHotkeyPool, solutionSet);
+    AllocateReservedHotkeys(abilityHotkeyPool, solutionSet);
+    AllocateUnreservedHotkeys(abilityHotkeyPool, solutionSet);
   }
 
-  private static void AllocateReservedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolution solution)
+  /// <summary>
+  /// Allocate any hotkeys that have already been solved for another specialization, but which are not core abilities.
+  /// <para>Hotkey solutions can only be reused if both specializations have the same ability with the same frequency.</para>
+  /// </summary>
+  private static void AllocateAlreadySolvedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolutionSet solutionSet)
+  {
+    foreach (var componentAbility in abilityHotkeyPool.ComponentAbilities.ToList())
+    {
+      if (solutionSet.TryGetHotkeySolution(componentAbility.Ability, out var solution))
+      {
+        abilityHotkeyPool.Remove(componentAbility, solution.Value.Hotkey);
+        solutionSet.AddHotkey(componentAbility, solution.Value.Hotkey);
+      }
+    }
+  }
+  
+  private static void AllocateReservedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolutionSet solutionSet)
   {
     foreach (var componentAbility in abilityHotkeyPool.ComponentAbilities.ToList())
     {
       if (abilityHotkeyPool.TryGetReservedHotkey(componentAbility.Ability, out var hotkey))
       {
         abilityHotkeyPool.Remove(componentAbility, hotkey);
-        solution.AddHotkey(componentAbility, hotkey);
+        solutionSet.AddHotkey(componentAbility, hotkey);
       }
     }
   }
   
-  private static void AllocateUnreservedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolution solution)
+  private static void AllocateUnreservedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolutionSet solutionSet)
   {
     var hotkeys = abilityHotkeyPool.Hotkeys.ToList();
     var hotkeyIndex = hotkeys.Count - 1;
     foreach (var ability in abilityHotkeyPool.ComponentAbilities.ToList())
     {
       var hotkey = hotkeys[hotkeyIndex];
-      solution.AddHotkey(ability, hotkey);
+      solutionSet.AddHotkey(ability, hotkey);
       abilityHotkeyPool.Remove(ability, hotkey);
       hotkeyIndex--;
     }

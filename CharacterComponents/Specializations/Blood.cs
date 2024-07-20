@@ -69,6 +69,21 @@ public sealed class Blood : ICharacterComponent
         Frequency = Frequency.Infrequent,
         AbilityType = AbilityType.PersonalDefensive
       },
+      new()
+      {
+        Name = "Death Coil",
+        Frequency = Frequency.AlmostNever
+      },
+      new()
+      {
+        Name = "Gorefiend's Grasp",
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Blooddrinker/Consumption",
+        Frequency = Frequency.Infrequent
+      }
     };
     return abilities;
   }

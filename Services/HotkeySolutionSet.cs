@@ -1,9 +1,10 @@
-﻿using System.Text;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text;
 using WoWHotkeySolver.Models;
 
 namespace WoWHotkeySolver.Services;
 
-public sealed class HotkeySolution
+public sealed class HotkeySolutionSet
 {
   private readonly Dictionary<ComponentAbility, Hotkey> _hotkeys = new();
   
@@ -21,6 +22,21 @@ public sealed class HotkeySolution
     return stringBuilder.ToString();
   }
 
+  /// <summary>
+  /// Gets the hotkey solution for the specified ability, regardless of which <see cref="ICharacterComponent"/>
+  /// it was assigned to.
+  /// </summary>
+  public bool TryGetHotkeySolution(Ability ability, [NotNullWhen(true)] out (ComponentAbility ComponentAbility, Hotkey Hotkey)? solution)
+  {
+    var solutionKvp = _hotkeys.FirstOrDefault(x => x.Key.Ability.Equals(ability));
+    solution = null;
+    if (solutionKvp.Key == null || solutionKvp.Value == null) 
+      return false;
+    
+    solution = (solutionKvp.Key, solutionKvp.Value);
+    return true;
+  }
+   
   /// <summary>
   /// Gets all <see cref="Hotkey"/>s assigned for a particular <see cref="ICharacterComponent"/>.
   /// </summary>
