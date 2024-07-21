@@ -24,11 +24,6 @@ public sealed class Elemental : ICharacterComponent
       },
       new()
       {
-        Name = "Flame Shock",
-        Frequency = Frequency.Frequent
-      },
-      new()
-      {
         Name = "Lightning Bolt",
         Frequency = Frequency.Constant
       },
@@ -45,17 +40,20 @@ public sealed class Elemental : ICharacterComponent
       new()
       {
         Name = "Earth Shock",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Frequent,
+        AbilityType = AbilityType.MainSpender
       },
       new()
       {
         Name = "Earthquake",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Frequent,
+        AbilityType = AbilityType.AoE
       },
       new()
       {
         Name = "Fire Elemental",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        AbilityType = AbilityType.ShortPrimaryCooldown
       },
       new()
       {
@@ -74,13 +72,8 @@ public sealed class Elemental : ICharacterComponent
       },
       new()
       {
-        Name = "Icefury",
-        Frequency = Frequency.Infrequent
-      },
-      new()
-      {
         Name = "Frost Shock",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Semifrequent
       },
       new()
       {

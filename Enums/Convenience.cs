@@ -17,5 +17,5 @@ public enum Convenience
 
   Bad,
 
-  Atrocious = 1000
+  Atrocious = 10000
 }

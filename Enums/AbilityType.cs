@@ -22,5 +22,8 @@ public enum AbilityType
   AoETargeted,
   
   /// <summary>The main ability you use to spend your core resource.</summary>
-  MainSpender
+  MainSpender,
+  
+  /// <summary>A primary damage cooldown with a cooldown between 1 and 1.5 minutes.</summary>
+  ShortPrimaryCooldown
 }

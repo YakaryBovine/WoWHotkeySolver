@@ -14,32 +14,35 @@ public sealed class Enhancement : ICharacterComponent
       new()
       {
         Name = "Flame Shock",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Semifrequent
       },
       new()
       {
         Name = "Frost Shock",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Semifrequent
       },
       new()
       {
         Name = "Chain Lightning",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Frequent
       },
       new()
       {
         Name = "Lightning Bolt",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Infrequent,
+        AbilityType = AbilityType.MainSpender
       },
       new()
       {
         Name = "Crash Lightning",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Frequent,
+        AbilityType = AbilityType.AoE
       },
       new()
       {
         Name = "Feral Spirit",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        AbilityType = AbilityType.ShortPrimaryCooldown
       },
       new()
       {
@@ -59,7 +62,7 @@ public sealed class Enhancement : ICharacterComponent
       new()
       {
         Name = "Elemental Blast",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Infrequent
       },
       new()
       {
@@ -69,11 +72,6 @@ public sealed class Enhancement : ICharacterComponent
       new()
       {
         Name = "Primordial Wave",
-        Frequency = Frequency.Infrequent
-      },
-      new()
-      {
-        Name = "Windfury Totem",
         Frequency = Frequency.Infrequent
       },
       new()

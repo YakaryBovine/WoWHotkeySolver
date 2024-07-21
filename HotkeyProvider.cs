@@ -83,7 +83,8 @@ public static class HotkeyProvider
       new()
       {
         Key = "x",
-        Convenience = Convenience.Bad
+        Convenience = Convenience.Bad,
+        ReservedForAbilityType = AbilityType.ShortPrimaryCooldown
       },
       new()
       {
