@@ -27,6 +27,7 @@ public sealed class SolverService
       //Put back into the pool any hotkeys that were NOT used for the core class first so they can be used for the
       //new specialization.
       var coreHotkeys = solution.GetComponentHotkeys(Class.Core);
+      abilityHotkeyPool.Hotkeys.Clear();
       abilityHotkeyPool.Hotkeys.AddRange(TransformAndOrderHotkeys().Where(x => !coreHotkeys.Contains(x)));
       Solve(solution, abilityHotkeyPool, specialization);
     }

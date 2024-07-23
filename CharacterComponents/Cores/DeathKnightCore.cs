@@ -63,11 +63,6 @@ public sealed class DeathKnightCore : ICharacterComponent
       },
       new()
       {
-        Name = "Empower Rune Weapon/Raise Dead",
-        Frequency = Frequency.Infrequent
-      },
-      new()
-      {
         Name = "Icebound Fortitude",
         Frequency = Frequency.Infrequent,
         AbilityType = AbilityType.PersonalDefensive
@@ -94,6 +89,21 @@ public sealed class DeathKnightCore : ICharacterComponent
         Name = "Anti-Magic Zone",
         Frequency = Frequency.Rarely
       },
+      new()
+      {
+        Name = "Death Pact",
+        Frequency = Frequency.AlmostNever
+      },
+      new()
+      {
+        Name = "Asphyxiate",
+        Frequency = Frequency.AlmostNever
+      },
+      new()
+      {
+        Name = "Wraith Walk",
+        Frequency = Frequency.AlmostNever
+      }
     };
     abilities.AddRange(new Shared().GetAbilities());
     abilities.AddRange(new Kultiran().GetAbilities()); 

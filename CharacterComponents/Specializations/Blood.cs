@@ -46,7 +46,8 @@ public sealed class Blood : ICharacterComponent
       new()
       {
         Name = "Dancing Rune Weapon",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        AbilityType = AbilityType.ShortPrimaryCooldown
       },
       new()
       {
@@ -83,6 +84,16 @@ public sealed class Blood : ICharacterComponent
       {
         Name = "Blooddrinker/Consumption",
         Frequency = Frequency.Infrequent
+      },
+      new()
+      {
+        Name = "Blood Tap",
+        Frequency = Frequency.AlmostNever
+      },
+      new()
+      {
+        Name = "Rune Tap",
+        Frequency = Frequency.AlmostNever
       }
     };
     return abilities;

@@ -36,11 +36,6 @@ public sealed class ShamanCore : ICharacterComponent
       },
       new()
       {
-        Name = "Haymaker",
-        Frequency = Frequency.Infrequent
-      },
-      new()
-      {
         Name = "Earth Elemental",
         Frequency = Frequency.AlmostNever
       },
@@ -103,6 +98,7 @@ public sealed class ShamanCore : ICharacterComponent
       },
     };
     abilities.AddRange(new Shared().GetAbilities());
+    abilities.AddRange(new Kultiran().GetAbilities());
     return abilities;
   }
 }

@@ -50,12 +50,13 @@ public sealed class Frost : ICharacterComponent
       new()
       {
         Name = "Frostwyrm's Fury",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Rarely
       },
       new()
       {
         Name = "Pillar of Frost",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        AbilityType = AbilityType.ShortPrimaryCooldown
       },
       new()
       {
@@ -71,6 +72,26 @@ public sealed class Frost : ICharacterComponent
       {
         Name = "Reaper's Mark",
         Frequency = Frequency.Frequent
+      },
+      new()
+      {
+        Name = "Frostscythe",
+        Frequency = Frequency.Semifrequent
+      },
+      new()
+      {
+        Name = "Horn of Winter",
+        Frequency = Frequency.Infrequent
+      },
+      new()
+      {
+        Name = "Chill Streak",
+        Frequency = Frequency.Infrequent
+      },
+      new()
+      {
+        Name = "Empower Rune Weapon",
+        Frequency = Frequency.Rarely
       }
     };
     return abilities;

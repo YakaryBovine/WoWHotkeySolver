@@ -4,7 +4,7 @@ using WoWHotkeySolver.Services;
 
 var solverService = new SolverService
 {
-  Class = new Shaman(),
+  Class = new DeathKnight(),
   Hotkeys = HotkeyProvider.GetAllHotkeys()
 };
 

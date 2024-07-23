@@ -11,13 +11,13 @@ public enum Frequency
   /// <summary>Used every 3-4 casts or so.</summary>
   Frequent,
   
-  /// <summary>Used every 15 seconds or so.</summary>
+  /// <summary>Has a cooldown of 20 seconds or less.</summary>
   Semifrequent,
   
-  /// <summary>Used every minute or so.</summary>
+  /// <summary>Has a cooldown between 21 seconds and a minute.</summary>
   Infrequent,
   
-  /// <summary>Has a cooldown of 2-3 minutes.</summary>
+  /// <summary>Has a cooldown greater than a minute.</summary>
   Rarely,
   
   /// <summary>There's usually not a good reason to use this at all.</summary>
