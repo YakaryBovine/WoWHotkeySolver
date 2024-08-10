@@ -52,25 +52,15 @@ public sealed class SolverService
   private static void AllocateAlreadySolvedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolutionSet solutionSet)
   {
     foreach (var componentAbility in abilityHotkeyPool.ComponentAbilities.ToList())
-    {
-      if (solutionSet.TryGetAllocation(componentAbility.Ability, out var solution))
-      {
-        abilityHotkeyPool.Remove(componentAbility, solution.Value.Hotkey);
-        solutionSet.Allocate(componentAbility, solution.Value.Hotkey);
-      }
-    }
+      if (solutionSet.TryGetAllocation(componentAbility.Ability, out var solution)) 
+        AllocateHotkey(solutionSet, abilityHotkeyPool, componentAbility, solution.Value.Hotkey);
   }
   
   private static void AllocateReservedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolutionSet solutionSet)
   {
     foreach (var componentAbility in abilityHotkeyPool.ComponentAbilities.ToList())
-    {
-      if (abilityHotkeyPool.TryGetReservedHotkey(componentAbility.Ability, out var hotkey))
-      {
-        abilityHotkeyPool.Remove(componentAbility, hotkey.Value);
-        solutionSet.Allocate(componentAbility, hotkey.Value);
-      }
-    }
+      if (abilityHotkeyPool.TryGetReservedHotkey(componentAbility.Ability, out var hotkey)) 
+        AllocateHotkey(solutionSet, abilityHotkeyPool, componentAbility, hotkey.Value);
   }
   
   private static void AllocateUnreservedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolutionSet solutionSet)
@@ -80,10 +70,16 @@ public sealed class SolverService
     foreach (var ability in abilityHotkeyPool.ComponentAbilities.ToList())
     {
       var hotkey = hotkeys[hotkeyIndex];
-      solutionSet.Allocate(ability, hotkey);
-      abilityHotkeyPool.Remove(ability, hotkey);
+      AllocateHotkey(solutionSet, abilityHotkeyPool, ability, hotkey);
       hotkeyIndex--;
     }
+  }
+  
+  private static void AllocateHotkey(HotkeySolutionSet solutionSet, AbilityHotkeyPool abilityHotkeyPool,
+    ComponentAbility componentAbility,  Hotkey hotkey)
+  {
+    abilityHotkeyPool.Remove(componentAbility, hotkey);
+    solutionSet.Allocate(componentAbility, hotkey);
   }
 
   private IEnumerable<Hotkey> TransformAndOrderHotkeys()

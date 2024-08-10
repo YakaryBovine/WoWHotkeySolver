@@ -47,7 +47,7 @@ public sealed class HotkeySolutionSet
 
     return stringBuilder.ToString();
   }
-  
+
   private void AppendComponent(StringBuilder stringBuilder, ICharacterComponent component)
   {
     stringBuilder.AppendLine($"----{component.Name}----");
