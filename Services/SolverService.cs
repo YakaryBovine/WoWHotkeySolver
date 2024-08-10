@@ -53,10 +53,10 @@ public sealed class SolverService
   {
     foreach (var componentAbility in abilityHotkeyPool.ComponentAbilities.ToList())
     {
-      if (solutionSet.TryGetHotkeySolution(componentAbility.Ability, out var solution))
+      if (solutionSet.TryGetAllocation(componentAbility.Ability, out var solution))
       {
         abilityHotkeyPool.Remove(componentAbility, solution.Value.Hotkey);
-        solutionSet.AddHotkey(componentAbility, solution.Value.Hotkey);
+        solutionSet.Allocate(componentAbility, solution.Value.Hotkey);
       }
     }
   }
@@ -68,7 +68,7 @@ public sealed class SolverService
       if (abilityHotkeyPool.TryGetReservedHotkey(componentAbility.Ability, out var hotkey))
       {
         abilityHotkeyPool.Remove(componentAbility, hotkey.Value);
-        solutionSet.AddHotkey(componentAbility, hotkey.Value);
+        solutionSet.Allocate(componentAbility, hotkey.Value);
       }
     }
   }
@@ -80,7 +80,7 @@ public sealed class SolverService
     foreach (var ability in abilityHotkeyPool.ComponentAbilities.ToList())
     {
       var hotkey = hotkeys[hotkeyIndex];
-      solutionSet.AddHotkey(ability, hotkey);
+      solutionSet.Allocate(ability, hotkey);
       abilityHotkeyPool.Remove(ability, hotkey);
       hotkeyIndex--;
     }

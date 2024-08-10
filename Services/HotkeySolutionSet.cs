@@ -8,7 +8,7 @@ public sealed class HotkeySolutionSet
 {
   private readonly Dictionary<ComponentAbility, Hotkey> _hotkeys = new();
 
-  public void AddHotkey(ComponentAbility componentAbility, Hotkey hotkey)
+  public void Allocate(ComponentAbility componentAbility, Hotkey hotkey)
   {
     _hotkeys.Add(componentAbility, hotkey);
   }
@@ -17,7 +17,7 @@ public sealed class HotkeySolutionSet
   ///   Gets the hotkey solution for the specified ability, regardless of which <see cref="ICharacterComponent" />
   ///   it was assigned to.
   /// </summary>
-  public bool TryGetHotkeySolution(Ability ability,
+  public bool TryGetAllocation(Ability ability,
     [NotNullWhen(true)] out (ComponentAbility ComponentAbility, Hotkey Hotkey)? solution)
   {
     var solutionKvp = _hotkeys.FirstOrDefault(x => x.Key.Ability.Equals(ability));
