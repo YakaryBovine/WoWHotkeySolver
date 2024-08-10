@@ -7,44 +7,45 @@ namespace WoWHotkeySolver.Services;
 public sealed class HotkeySolutionSet
 {
   private readonly Dictionary<ComponentAbility, Hotkey> _hotkeys = new();
-  
+
   public void AddHotkey(ComponentAbility componentAbility, Hotkey hotkey)
   {
     _hotkeys.Add(componentAbility, hotkey);
   }
-  
-  public override string ToString()
-  {
-    var stringBuilder = new StringBuilder();
-    foreach (var characterComponent in _hotkeys.Keys.Select(x => x.Source).Distinct())
-      AppendComponent(stringBuilder, characterComponent);
-    
-    return stringBuilder.ToString();
-  }
 
   /// <summary>
-  /// Gets the hotkey solution for the specified ability, regardless of which <see cref="ICharacterComponent"/>
-  /// it was assigned to.
+  ///   Gets the hotkey solution for the specified ability, regardless of which <see cref="ICharacterComponent" />
+  ///   it was assigned to.
   /// </summary>
-  public bool TryGetHotkeySolution(Ability ability, [NotNullWhen(true)] out (ComponentAbility ComponentAbility, Hotkey Hotkey)? solution)
+  public bool TryGetHotkeySolution(Ability ability,
+    [NotNullWhen(true)] out (ComponentAbility ComponentAbility, Hotkey Hotkey)? solution)
   {
     var solutionKvp = _hotkeys.FirstOrDefault(x => x.Key.Ability.Equals(ability));
     solution = null;
     if (solutionKvp.Key == null)
       return false;
-    
+
     solution = (solutionKvp.Key, solutionKvp.Value);
     return true;
   }
-   
+
   /// <summary>
-  /// Gets all <see cref="Hotkey"/>s assigned for a particular <see cref="ICharacterComponent"/>.
+  ///   Gets all <see cref="Hotkey" />s assigned for a particular <see cref="ICharacterComponent" />.
   /// </summary>
   public List<Hotkey> GetComponentHotkeys(ICharacterComponent component)
   {
     return _hotkeys
       .Where(kvp => kvp.Key.Source == component)
       .Select(x => x.Value).ToList();
+  }
+
+  public override string ToString()
+  {
+    var stringBuilder = new StringBuilder();
+    foreach (var characterComponent in _hotkeys.Keys.Select(x => x.Source).Distinct())
+      AppendComponent(stringBuilder, characterComponent);
+
+    return stringBuilder.ToString();
   }
   
   private void AppendComponent(StringBuilder stringBuilder, ICharacterComponent component)
@@ -56,8 +57,6 @@ public sealed class HotkeySolutionSet
       .ThenBy(x => x.Value.Convenience)
       .ThenBy(x => x.Value.Key);
     foreach (var (componentAbility, hotkey) in sortedAbilityHotkeys)
-    {
       stringBuilder.AppendLine($"{componentAbility.Ability.Name}: {hotkey.ToString()}");
-    }
   }
 }
