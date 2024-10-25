@@ -96,6 +96,12 @@ public sealed class PriestCore : ICharacterComponent
         Name = "Shackle Undead/Guardian Spirit",
         Frequency = Frequency.Infrequent,
         AbilityType = AbilityType.ExternalDefensive
+      },
+      new()
+      {
+        Name = "Shadowmeld",
+        Frequency = Frequency.AlmostNever,
+        AbilityType = AbilityType.ExternalDefensive
       }
     };
     abilities.AddRange(new Shared().GetAbilities());

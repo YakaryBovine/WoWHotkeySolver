@@ -66,6 +66,11 @@ public sealed class Holy : ICharacterComponent
       {
         Name = "Holy Word: Chastise/Holy Word: Serenity",
         Frequency = Frequency.Semifrequent
+      },
+      new()
+      {
+        Name = "Premonition",
+        Frequency = Frequency.Infrequent
       }
     };
     return abilities;
