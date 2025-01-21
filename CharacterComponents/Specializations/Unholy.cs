@@ -54,11 +54,6 @@ public sealed class Unholy : ICharacterComponent
       },
       new()
       {
-        Name = "Unholy Blight",
-        Frequency = Frequency.Infrequent
-      },
-      new()
-      {
         Name = "Epidemic",
         Frequency = Frequency.Infrequent
       },
@@ -71,6 +66,11 @@ public sealed class Unholy : ICharacterComponent
       {
         Name = "Festering Strike",
         Frequency = Frequency.Constant
+      },
+      new()
+      {
+        Name = "Outbreak",
+        Frequency = Frequency.Infrequent
       },
     };
     return abilities;
