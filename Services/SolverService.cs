@@ -1,4 +1,5 @@
-﻿using WoWHotkeySolver.Enums;
+﻿using WoWHotkeySolver.Collections;
+using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
 namespace WoWHotkeySolver.Services;
@@ -7,92 +8,77 @@ public sealed class SolverService
 {
   public required ICharacterClass Class { get; init; }
   
-  public required List<Hotkey> Hotkeys { get; init; }
+  public required HotkeyPool Hotkeys { get; init; }
 
   public void SolveAll()
   {
-    var solution = new HotkeySolutionSet();
-    var abilityHotkeyPool = new AbilityHotkeyPool();
-    abilityHotkeyPool.Hotkeys.AddRange(TransformAndOrderHotkeys());
     //Order the specialization with the most reserved abilities first to ensure that core abilities can't take the
     //hotkeys they need.
     var orderedSpecializations = Class.Specializations
         .OrderBy(x => x.GetAbilities().Count(ability => ability.Type != AbilityType.Other))
         .ToList();
-    
-    Solve(solution, abilityHotkeyPool, Class.Core, orderedSpecializations.Last());
+
+    var specializatiionSolutions = new List<HotkeyAssignments>();
+    specializatiionSolutions.Add(Solve(Hotkeys, specializatiionSolutions, orderedSpecializations.Last(),
+      Class.Core));
 
     foreach (var specialization in orderedSpecializations.SkipLast(1))
-    {
-      //Put back into the pool any hotkeys that were NOT used for the core class first so they can be used for the
-      //new specialization.
-      var coreHotkeys = solution.GetComponentHotkeys(Class.Core);
-      abilityHotkeyPool.Hotkeys.Clear();
-      abilityHotkeyPool.Hotkeys.AddRange(TransformAndOrderHotkeys().Where(x => !coreHotkeys.Contains(x)));
-      Solve(solution, abilityHotkeyPool, specialization);
-    }
-      
-    Console.WriteLine(solution.ToString());
-  }
+      specializatiionSolutions.Add(Solve(Hotkeys, specializatiionSolutions, specialization, Class.Core));
 
-  private static void Solve(HotkeySolutionSet solutionSet, AbilityHotkeyPool abilityHotkeyPool, params ICharacterComponent[] components)
-  {
-    foreach (var component in components)
-      abilityHotkeyPool.AddAbilities(component);
-    
-    AllocateAlreadySolvedHotkeys(abilityHotkeyPool, solutionSet);
-    AllocateReservedHotkeys(abilityHotkeyPool, solutionSet);
-    AllocateUnreservedHotkeys(abilityHotkeyPool, solutionSet);
+    foreach (var solution in specializatiionSolutions)
+      Console.WriteLine(solution.ToString());
   }
 
   /// <summary>
-  /// Allocate any hotkeys that have already been solved for another specialization, but which are not core abilities.
-  /// <para>Hotkey solutions can only be reused if both specializations have the same ability with the same frequency.</para>
+  /// Provides hotkey assignments for all abilities the provided character has.
   /// </summary>
-  private static void AllocateAlreadySolvedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolutionSet solutionSet)
+  /// <param name="hotkeyPool">The hotkeys available to the player.</param>
+  /// <param name="previousSolutions">Solutions made for previous specializations, which may be reused for this one.</param>
+  /// <param name="characterComponents">Any number of components which together form a character.</param>
+  /// <returns>A set of hotkeys assigned to abilities.</returns>
+  private static HotkeyAssignments Solve(HotkeyPool hotkeyPool, List<HotkeyAssignments> previousSolutions, params ICharacterComponent[] characterComponents)
   {
-    foreach (var componentAbility in abilityHotkeyPool.ComponentAbilities.ToList())
-      if (solutionSet.TryGetAllocation(componentAbility.Ability, out var solution)) 
-        AllocateHotkey(solutionSet, abilityHotkeyPool, componentAbility, solution.Value.Hotkey);
-  }
-  
-  private static void AllocateReservedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolutionSet solutionSet)
-  {
-    foreach (var componentAbility in abilityHotkeyPool.ComponentAbilities.ToList())
-      if (abilityHotkeyPool.TryGetReservedHotkey(componentAbility.Ability, out var hotkey)) 
-        AllocateHotkey(solutionSet, abilityHotkeyPool, componentAbility, hotkey.Value);
-  }
-  
-  private static void AllocateUnreservedHotkeys(AbilityHotkeyPool abilityHotkeyPool, HotkeySolutionSet solutionSet)
-  {
-    var hotkeys = abilityHotkeyPool.Hotkeys.ToList();
-    var hotkeyIndex = hotkeys.Count - 1;
-    foreach (var ability in abilityHotkeyPool.ComponentAbilities.ToList())
+    var assignedHotkeys = new HotkeyAssignments
     {
-      var hotkey = hotkeys[hotkeyIndex];
-      AllocateHotkey(solutionSet, abilityHotkeyPool, ability, hotkey);
-      hotkeyIndex--;
-    }
-  }
-  
-  private static void AllocateHotkey(HotkeySolutionSet solutionSet, AbilityHotkeyPool abilityHotkeyPool,
-    ComponentAbility componentAbility,  Hotkey hotkey)
-  {
-    abilityHotkeyPool.Remove(componentAbility, hotkey);
-    solutionSet.Assign(componentAbility, hotkey);
+      Title = characterComponents.First().Name
+    };
+    var abilityPool = new AbilityPool(characterComponents);
+    
+    AllocateAlreadySolvedHotkeys(assignedHotkeys, abilityPool, previousSolutions);
+    AllocateReservedHotkeys(assignedHotkeys, abilityPool, hotkeyPool);
+    AllocateUnreservedHotkeys(assignedHotkeys, abilityPool, hotkeyPool);
+
+    return assignedHotkeys;
   }
 
-  private IEnumerable<Hotkey> TransformAndOrderHotkeys()
+  /// <summary>
+  /// Allocate any hotkeys that have already been solved for another component.
+  /// <remarks>Abilities are only assigned to the same hotkey if they share the same name AND frequency.</remarks>
+  /// </summary>
+  private static void AllocateAlreadySolvedHotkeys(HotkeyAssignments assignments, AbilityPool abilityPool,
+    List<HotkeyAssignments> previousSolutions)
   {
-    var hotkeys = Hotkeys.ToList();
-    hotkeys.AddRange(Hotkeys.Where(x => x.AllowShiftModifier && x.Modifier == Modifier.None).Select(h => new Hotkey
-    {
-      Key = $"{h.Key}",
-      Convenience = h.Convenience.ApplyModifierPenalty(),
-      AllowShiftModifier = false,
-      Modifier = Modifier.Shift,
-      ReservedForAbilityType = AbilityType.Other
-    }));
-    return hotkeys.OrderByDescending(x => x.Convenience).ToList();
+    foreach (var ability in abilityPool.Abilities)
+      foreach (var previousSolution in previousSolutions)
+        if (previousSolution.TryGetAssignment(ability, out var assignment))
+          if (assignments.TryAssign(ability, assignment.Value))
+            break;
+  }
+  
+  private static void AllocateReservedHotkeys(HotkeyAssignments hotkeyAssignments, AbilityPool abilityPool,
+    HotkeyPool hotkeyPool)
+  {
+    foreach (var ability in abilityPool.Abilities)
+      foreach (var reservedHotkey in hotkeyPool.GetReservedHotkey(ability.Type))
+        if (hotkeyAssignments.TryAssign(ability, reservedHotkey))
+          break;
+  }
+  
+  private static void AllocateUnreservedHotkeys(HotkeyAssignments assignments, AbilityPool abilityPool, HotkeyPool hotkeyPool)
+  {
+    foreach (var ability in abilityPool.Abilities)
+      foreach (var hotkey in hotkeyPool.Hotkeys)
+        if (assignments.TryAssign(ability, hotkey))
+          break;
   }
 }
