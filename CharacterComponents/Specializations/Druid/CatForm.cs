@@ -59,7 +59,13 @@ public sealed class CatForm : ICharacterComponent
       },
       new()
       {
-        Name = "Convoke",
+        Name = "Berserk",
+        Frequency = Frequency.Rarely,
+        Type = AbilityType.ShortPrimaryCooldown
+      },
+      new()
+      {
+        Name = "Convoke the Spirits",
         Frequency = Frequency.Rarely
       },
       new()
@@ -71,7 +77,7 @@ public sealed class CatForm : ICharacterComponent
       new()
       {
         Name = "Survival Instincts",
-        Frequency = Frequency.AlmostNever,
+        Frequency = Frequency.Rarely,
         Type = AbilityType.PersonalDefensive
       },
       new()
@@ -80,6 +86,11 @@ public sealed class CatForm : ICharacterComponent
         Frequency = Frequency.Infrequent,
         Type = AbilityType.Interrupt,
         Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
+        Name = "Adaptive Swarm",
+        Frequency = Frequency.Infrequent
       }
     };
     return abilities;

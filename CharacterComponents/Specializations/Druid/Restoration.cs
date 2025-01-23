@@ -1,7 +1,7 @@
 ﻿using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.CharacterComponents.Specializations;
+namespace WoWHotkeySolver.CharacterComponents.Specializations.Druid;
 
 public sealed class Restoration : ICharacterComponent
 {
@@ -55,6 +55,13 @@ public sealed class Restoration : ICharacterComponent
       },
       new()
       {
+        Name = "Starsurge",
+        Frequency = Frequency.Frequent,
+        Type = AbilityType.MainSpender,
+        Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
         Name = "Wild Growth",
         Frequency = Frequency.Frequent,
         Type = AbilityType.AoE,
@@ -63,8 +70,7 @@ public sealed class Restoration : ICharacterComponent
       new()
       {
         Name = "Swiftmend",
-        Frequency = Frequency.Frequent,
-        Type = AbilityType.MainSpender,
+        Frequency = Frequency.Semifrequent,
         Slot = AbilitySlot.Friendly
       },
       new()
@@ -103,6 +109,18 @@ public sealed class Restoration : ICharacterComponent
       },
       new()
       {
+        Name = "Overgrowth",
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Friendly
+      },
+      new()
+      {
+        Name = "Invigorate",
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Friendly
+      },
+      new()
+      {
         Name = "Efflorescence",
         Frequency = Frequency.Infrequent
       },
@@ -112,6 +130,12 @@ public sealed class Restoration : ICharacterComponent
         Frequency = Frequency.Infrequent,
         Type = AbilityType.Interrupt,
         Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
+        Name = "Incarnation/Convoke the Spirits",
+        Frequency = Frequency.Rarely,
+        Type = AbilityType.ShortPrimaryCooldown
       }
     };
     return abilities;

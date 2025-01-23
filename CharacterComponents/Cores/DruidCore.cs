@@ -37,35 +37,21 @@ public class DruidCore : ICharacterComponent
       },
       new()
       {
-        Name = "Survival Instincts",
-        Frequency = Frequency.Constant,
-        Type = AbilityType.PersonalDefensive
-      },
-      new()
-      {
-        Name = "Heart of the Wild",
-        Frequency = Frequency.AlmostNever
-      },
-      new()
-      {
-        Name = "Incarnation/Convoke",
-        Frequency = Frequency.Rarely,
-        Type = AbilityType.ShortPrimaryCooldown
-      },
-      new()
-      {
         Name = "Innervate",
-        Frequency = Frequency.Rarely
+        Frequency = Frequency.Rarely,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
         Name = "Entangling Roots",
-        Frequency = Frequency.Rarely
+        Frequency = Frequency.Rarely,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
         Name = "Cyclone",
-        Frequency = Frequency.AlmostNever
+        Frequency = Frequency.AlmostNever,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
@@ -76,7 +62,8 @@ public class DruidCore : ICharacterComponent
       {
         Name = "Incapacitating Roar/Mighty Bash",
         Frequency = Frequency.Rarely,
-        Type = AbilityType.Stun
+        Type = AbilityType.Stun,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
@@ -96,22 +83,19 @@ public class DruidCore : ICharacterComponent
       new()
       {
         Name = "Soothe",
-        Frequency = Frequency.Rarely
+        Frequency = Frequency.Rarely,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
         Name = "Hibernate",
-        Frequency = Frequency.AlmostNever
+        Frequency = Frequency.AlmostNever,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
         Name = "Prowl",
-        Frequency = Frequency.AlmostNever
-      },
-      new()
-      {
-        Name = "Adaptive Swarm",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Rarely
       },
       new()
       {
@@ -123,7 +107,26 @@ public class DruidCore : ICharacterComponent
         Name = "Shadowmeld",
         Frequency = Frequency.Rarely
       },
+      new()
+      {
+        Name = "Rebirth",
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Dead
+      },
+      new()
+      {
+        Name = "Revive",
+        Frequency = Frequency.AlmostNever,
+        Slot = AbilitySlot.Dead
+      },
+      new()
+      {
+        Name = "Mass Resurrection",
+        Frequency = Frequency.AlmostNever,
+        Slot = AbilitySlot.Dead
+      },
     };
+    abilities.AddRange(new Shared().GetAbilities());
     return abilities;
   }
 }

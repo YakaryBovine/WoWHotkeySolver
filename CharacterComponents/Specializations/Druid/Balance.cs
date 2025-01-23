@@ -1,7 +1,7 @@
 ﻿using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.CharacterComponents.Specializations;
+namespace WoWHotkeySolver.CharacterComponents.Specializations.Druid;
 
 public sealed class Balance : ICharacterComponent
 {
@@ -22,6 +22,12 @@ public sealed class Balance : ICharacterComponent
         Name = "Wrath",
         Frequency = Frequency.Constant,
         Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
+        Name = "Rejuvenation",
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
@@ -60,7 +66,39 @@ public sealed class Balance : ICharacterComponent
         Frequency = Frequency.Infrequent,
         Type = AbilityType.Interrupt,
         Slot = AbilitySlot.Hostile
-      }
+      },
+      new()
+      {
+        Name = "Celestial Alignment",
+        Frequency = Frequency.Rarely,
+        Type = AbilityType.ShortPrimaryCooldown
+      },
+      new()
+      {
+        Name = "Convoke the Spirits",
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Flap",
+        Frequency = Frequency.AlmostNever
+      },
+      new()
+      {
+        Name = "Force of Nature/Warrior of Elune",
+        Frequency = Frequency.Infrequent
+      },
+      new()
+      {
+        Name = "Stellar Flare",
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
+        Name = "New Moon",
+        Frequency = Frequency.Semifrequent
+      },
     };
     return abilities;
   }

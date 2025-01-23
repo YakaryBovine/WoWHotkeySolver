@@ -37,7 +37,8 @@ public sealed class BearForm : ICharacterComponent
       {
         Name = "Growl",
         Frequency = Frequency.Semifrequent,
-        Type = AbilityType.Taunt
+        Type = AbilityType.Taunt,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
@@ -78,7 +79,7 @@ public sealed class BearForm : ICharacterComponent
       new()
       {
         Name = "Survival Instincts",
-        Frequency = Frequency.AlmostNever,
+        Frequency = Frequency.Rarely,
         Type = AbilityType.PersonalDefensive
       },
       new()
@@ -87,7 +88,23 @@ public sealed class BearForm : ICharacterComponent
         Frequency = Frequency.Infrequent,
         Type = AbilityType.Interrupt,
         Slot = AbilitySlot.Hostile
-      }
+      },
+      new()
+      {
+        Name = "Berserk",
+        Frequency = Frequency.Rarely,
+        Type = AbilityType.ShortPrimaryCooldown
+      },
+      new()
+      {
+        Name = "Convoke the Spirits",
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Frenzied Regeneration",
+        Frequency = Frequency.Frequent
+      },
     };
     return abilities;
   }

@@ -16,7 +16,9 @@ public sealed class HotkeyPool
   /// Gets all <see cref="Hotkey"/> reserved for a particular ability type, if any.
   /// </summary>
   public IEnumerable<Hotkey> GetReservedHotkey(AbilityType abilityType) =>
-    Hotkeys.Where(x => x.ReservedForAbilityType == abilityType);
+    abilityType == AbilityType.Other
+      ? Enumerable.Empty<Hotkey>()
+      : Hotkeys.Where(x => x.ReservedForAbilityType == abilityType);
 
   private static List<Hotkey> TransformAndOrderHotkeys(List<Hotkey> hotKeys)
   {

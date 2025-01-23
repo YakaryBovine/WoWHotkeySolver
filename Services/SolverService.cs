@@ -77,8 +77,10 @@ public sealed class SolverService
   private static void AllocateUnreservedHotkeys(HotkeyAssignments assignments, AbilityPool abilityPool, HotkeyPool hotkeyPool)
   {
     foreach (var ability in abilityPool.Abilities.OrderBy(x => x.Frequency))
+    {
       foreach (var hotkey in hotkeyPool.Hotkeys)
         if (assignments.TryAssign(ability, (hotkey, ability.Slot)))
           break;
+    }
   }
 }

@@ -1,5 +1,4 @@
 ﻿using WoWHotkeySolver.CharacterComponents.Cores;
-using WoWHotkeySolver.CharacterComponents.Specializations;
 using WoWHotkeySolver.CharacterComponents.Specializations.Druid;
 using WoWHotkeySolver.Models;
 
