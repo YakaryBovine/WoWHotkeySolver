@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
 namespace WoWHotkeySolver.Collections;
@@ -11,20 +12,37 @@ public sealed class HotkeyAssignments
 {
   public required string Title { get; init; }
   
-  private readonly Dictionary<Ability, Hotkey> _hotkeys = new();
-
+  private readonly Dictionary<(Hotkey Hotkey, AbilitySlot Slot), Ability> _hotkeys = new();
+  
   /// <summary>
   /// Assigns a hotkey to an ability, but only if neither have been assigned already.
   /// </summary>
-  public bool TryAssign(Ability ability, Hotkey hotkey)
+  public bool TryAssign(Ability ability, (Hotkey Hotkey, AbilitySlot Slot) hotkeyInSlot)
   {
-    if (_hotkeys.ContainsKey(ability))
-      return false;
-
-    if (_hotkeys.ContainsValue(hotkey))
+    if (_hotkeys.ContainsKey(hotkeyInSlot))
       return false;
     
-    _hotkeys.Add(ability, hotkey);
+    //Todo: insanity, so bad
+    if (_hotkeys.ContainsKey((hotkeyInSlot.Hotkey, AbilitySlot.All)))
+      return false;
+
+    //Todo: surely not...
+    if (hotkeyInSlot.Slot == AbilitySlot.All)
+    {
+      if (_hotkeys.ContainsKey((hotkeyInSlot.Hotkey, AbilitySlot.Dead)))
+        return false;
+      
+      if (_hotkeys.ContainsKey((hotkeyInSlot.Hotkey, AbilitySlot.Friendly)))
+        return false;
+      
+      if (_hotkeys.ContainsKey((hotkeyInSlot.Hotkey, AbilitySlot.Hostile)))
+        return false;
+    }
+
+    if (_hotkeys.ContainsValue(ability))
+      return false;
+
+    _hotkeys.Add(hotkeyInSlot, ability);
 
     return true;
   }
@@ -33,17 +51,17 @@ public sealed class HotkeyAssignments
   ///   Gets the hotkey solution for the specified ability, regardless of which <see cref="ICharacterComponent" />
   ///   it was assigned to.
   /// </summary>
-  public bool TryGetAssignment(Ability ability, [NotNullWhen(true)] out Hotkey? hotkey)
+  public bool TryGetAssignment(Ability ability, [NotNullWhen(true)] out (Hotkey Hotkey, AbilitySlot AbilitySlot)? assignment)
   {
-    var solutionKvp = _hotkeys.FirstOrDefault(x => x.Key.Equals(ability));
+    var solutionKvp = _hotkeys.FirstOrDefault(x => x.Value.Equals(ability));
 
-    if (solutionKvp.Key == null)
+    if (solutionKvp.Value == null)
     {
-      hotkey = null;
+      assignment = null;
       return false;
     }
 
-    hotkey = solutionKvp.Value;
+    assignment = solutionKvp.Key;
     return true;
   }
 
@@ -59,10 +77,11 @@ public sealed class HotkeyAssignments
   {
     stringBuilder.AppendLine($"----{Title}----");
     var sortedAbilityHotkeys = _hotkeys
-      .OrderBy(x => x.Value.Modifier)
-      .ThenBy(x => x.Value.Convenience)
-      .ThenBy(x => x.Value.Key);
-    foreach (var (ability, hotkey) in sortedAbilityHotkeys)
-      stringBuilder.AppendLine($"{ability.Name}: {hotkey.ToString()}");
+      .OrderBy(x => x.Key.Hotkey.Modifier)
+      .ThenBy(x => x.Key.Hotkey.Convenience)
+      .ThenBy(x => x.Key.Hotkey.Key);
+
+    foreach (var (hotkeyAndSlot, ability) in sortedAbilityHotkeys)
+      stringBuilder.AppendLine($"{ability.Name}: {hotkeyAndSlot.Hotkey.ToString()} {hotkeyAndSlot.Slot.ToFriendlyString()}");
   }
 }

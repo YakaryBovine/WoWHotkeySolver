@@ -19,7 +19,8 @@ public sealed class BearForm : ICharacterComponent
       new()
       {
         Name = "Mangle",
-        Frequency = Frequency.Constant
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
@@ -40,19 +41,21 @@ public sealed class BearForm : ICharacterComponent
       },
       new()
       {
-        Name = "Maul",
+        Name = "Maul/Raze",
         Frequency = Frequency.Constant,
         Type = AbilityType.MainSpender
       },
       new()
       {
         Name = "Regrowth",
-        Frequency = Frequency.Semifrequent
+        Frequency = Frequency.Semifrequent,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
         Name = "Pulverize",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
@@ -69,7 +72,8 @@ public sealed class BearForm : ICharacterComponent
       new()
       {
         Name = "Moonfire",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
@@ -77,6 +81,13 @@ public sealed class BearForm : ICharacterComponent
         Frequency = Frequency.AlmostNever,
         Type = AbilityType.PersonalDefensive
       },
+      new()
+      {
+        Name = "Skull Bash",
+        Frequency = Frequency.Infrequent,
+        Type = AbilityType.Interrupt,
+        Slot = AbilitySlot.Hostile
+      }
     };
     return abilities;
   }

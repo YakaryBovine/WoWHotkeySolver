@@ -70,7 +70,7 @@ public sealed class SolverService
   {
     foreach (var ability in abilityPool.Abilities)
       foreach (var reservedHotkey in hotkeyPool.GetReservedHotkey(ability.Type))
-        if (hotkeyAssignments.TryAssign(ability, reservedHotkey))
+        if (hotkeyAssignments.TryAssign(ability, (reservedHotkey, ability.Slot)))
           break;
   }
   
@@ -78,7 +78,7 @@ public sealed class SolverService
   {
     foreach (var ability in abilityPool.Abilities.OrderBy(x => x.Frequency))
       foreach (var hotkey in hotkeyPool.Hotkeys)
-        if (assignments.TryAssign(ability, hotkey))
+        if (assignments.TryAssign(ability, (hotkey, ability.Slot)))
           break;
   }
 }

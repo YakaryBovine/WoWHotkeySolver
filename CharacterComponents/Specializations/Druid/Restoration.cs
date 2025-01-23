@@ -14,40 +14,71 @@ public sealed class Restoration : ICharacterComponent
       new()
       {
         Name = "Lifebloom",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Frequent,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
         Name = "Rejuvenation",
-        Frequency = Frequency.Constant
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
         Name = "Regrowth",
-        Frequency = Frequency.Constant
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Friendly
+      },
+      new()
+      {
+        Name = "Starfire",
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
+        Name = "Wrath",
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
+        Name = "Moonfire",
+        Frequency = Frequency.Frequent,
+        Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
+        Name = "Sunfire",
+        Frequency = Frequency.Frequent,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
         Name = "Wild Growth",
         Frequency = Frequency.Frequent,
-        Type = AbilityType.AoE
+        Type = AbilityType.AoE,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
         Name = "Swiftmend",
         Frequency = Frequency.Frequent,
-        Type = AbilityType.MainSpender
+        Type = AbilityType.MainSpender,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
         Name = "Ironbark",
         Frequency = Frequency.Infrequent,
-        Type = AbilityType.ExternalDefensive
+        Type = AbilityType.ExternalDefensive,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
         Name = "Cenarion Ward",
-        Frequency = Frequency.Semifrequent
+        Frequency = Frequency.Semifrequent,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
@@ -67,13 +98,21 @@ public sealed class Restoration : ICharacterComponent
       new()
       {
         Name = "Grove Guardians/Nourish",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
         Name = "Efflorescence",
         Frequency = Frequency.Infrequent
       },
+      new()
+      {
+        Name = "Skull Bash",
+        Frequency = Frequency.Infrequent,
+        Type = AbilityType.Interrupt,
+        Slot = AbilitySlot.Hostile
+      }
     };
     return abilities;
   }

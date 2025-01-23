@@ -14,23 +14,27 @@ public sealed class CatForm : ICharacterComponent
       new()
       {
         Name = "Shred",
-        Frequency = Frequency.Constant
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
         Name = "Rake",
-        Frequency = Frequency.Constant
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
         Name = "Rip",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Frequent,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
         Name = "Ferocious Bite",
         Frequency = Frequency.Frequent,
-        Type = AbilityType.MainSpender
+        Type = AbilityType.MainSpender,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
@@ -61,7 +65,8 @@ public sealed class CatForm : ICharacterComponent
       new()
       {
         Name = "Feral Frenzy",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
@@ -69,6 +74,13 @@ public sealed class CatForm : ICharacterComponent
         Frequency = Frequency.AlmostNever,
         Type = AbilityType.PersonalDefensive
       },
+      new()
+      {
+        Name = "Skull Bash",
+        Frequency = Frequency.Infrequent,
+        Type = AbilityType.Interrupt,
+        Slot = AbilitySlot.Hostile
+      }
     };
     return abilities;
   }

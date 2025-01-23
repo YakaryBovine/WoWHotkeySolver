@@ -24,9 +24,10 @@ public class DruidCore : ICharacterComponent
       },
       new()
       {
-        Name = "Skull Bash/Nature's Cure/Solar Beam",
+        Name = "Nature's Cure",
         Frequency = Frequency.Infrequent,
-        Type = AbilityType.Interrupt
+        Type = AbilityType.Interrupt,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
