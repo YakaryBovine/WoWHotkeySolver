@@ -18,14 +18,14 @@ public sealed class SolverService
         .OrderBy(x => x.GetAbilities().Count(ability => ability.Type != AbilityType.Other))
         .ToList();
 
-    var specializatiionSolutions = new List<HotkeyAssignments>();
-    specializatiionSolutions.Add(Solve(Hotkeys, specializatiionSolutions, orderedSpecializations.Last(),
+    var specializationSolutions = new List<HotkeyAssignments>();
+    specializationSolutions.Add(Solve(Hotkeys, specializationSolutions, orderedSpecializations.Last(),
       Class.Core));
 
     foreach (var specialization in orderedSpecializations.SkipLast(1))
-      specializatiionSolutions.Add(Solve(Hotkeys, specializatiionSolutions, specialization, Class.Core));
+      specializationSolutions.Add(Solve(Hotkeys, specializationSolutions, specialization, Class.Core));
 
-    foreach (var solution in specializatiionSolutions)
+    foreach (var solution in specializationSolutions)
       Console.WriteLine(solution.ToString());
   }
 
