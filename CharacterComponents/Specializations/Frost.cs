@@ -30,7 +30,7 @@ public sealed class Frost : ICharacterComponent
       {
         Name = "Frost Strike",
         Frequency = Frequency.Constant,
-        AbilityType = AbilityType.MainSpender
+        Type = AbilityType.MainSpender
       },
       new()
       {
@@ -56,7 +56,7 @@ public sealed class Frost : ICharacterComponent
       {
         Name = "Pillar of Frost",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.ShortPrimaryCooldown
+        Type = AbilityType.ShortPrimaryCooldown
       },
       new()
       {

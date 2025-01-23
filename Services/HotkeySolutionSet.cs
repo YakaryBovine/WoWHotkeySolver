@@ -8,10 +8,10 @@ public sealed class HotkeySolutionSet
 {
   private readonly Dictionary<ComponentAbility, Hotkey> _hotkeys = new();
 
-  public void Allocate(ComponentAbility componentAbility, Hotkey hotkey)
-  {
-    _hotkeys.Add(componentAbility, hotkey);
-  }
+  /// <summary>
+  /// Assigns a hotkey to an ability.
+  /// </summary>
+  public void Assign(ComponentAbility componentAbility, Hotkey hotkey) => _hotkeys.Add(componentAbility, hotkey);
 
   /// <summary>
   ///   Gets the hotkey solution for the specified ability, regardless of which <see cref="ICharacterComponent" />

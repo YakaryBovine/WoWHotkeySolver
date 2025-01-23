@@ -41,19 +41,19 @@ public sealed class Elemental : ICharacterComponent
       {
         Name = "Earth Shock",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.MainSpender
+        Type = AbilityType.MainSpender
       },
       new()
       {
         Name = "Earthquake",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.AoE
+        Type = AbilityType.AoE
       },
       new()
       {
         Name = "Fire Elemental",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.ShortPrimaryCooldown
+        Type = AbilityType.ShortPrimaryCooldown
       },
       new()
       {

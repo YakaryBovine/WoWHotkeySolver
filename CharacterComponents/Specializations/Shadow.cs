@@ -15,7 +15,7 @@ public sealed class Shadow : ICharacterComponent
       {
         Name = "Dispersion",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
@@ -36,7 +36,7 @@ public sealed class Shadow : ICharacterComponent
       {
         Name = "Shadow Crash",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.AoE
+        Type = AbilityType.AoE
       }
     };
     return abilities;

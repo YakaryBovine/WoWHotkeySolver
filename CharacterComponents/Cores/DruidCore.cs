@@ -20,25 +20,25 @@ public class DruidCore : ICharacterComponent
       {
         Name = "Wild Charge",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Movement
+        Type = AbilityType.Movement
       },
       new()
       {
         Name = "Skull Bash/Nature's Cure/Solar Beam",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Interrupt
+        Type = AbilityType.Interrupt
       },
       new()
       {
         Name = "Barkskin",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
         Name = "Survival Instincts",
         Frequency = Frequency.Constant,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
@@ -49,7 +49,7 @@ public class DruidCore : ICharacterComponent
       {
         Name = "Incarnation/Convoke",
         Frequency = Frequency.Rarely,
-        AbilityType = AbilityType.ShortPrimaryCooldown
+        Type = AbilityType.ShortPrimaryCooldown
       },
       new()
       {
@@ -75,7 +75,7 @@ public class DruidCore : ICharacterComponent
       {
         Name = "Incapacitating Roar/Mighty Bash",
         Frequency = Frequency.Rarely,
-        AbilityType = AbilityType.Stun
+        Type = AbilityType.Stun
       },
       new()
       {
@@ -106,12 +106,6 @@ public class DruidCore : ICharacterComponent
       {
         Name = "Prowl",
         Frequency = Frequency.AlmostNever
-      },
-      new()
-      {
-        Name = "Survival Instincts",
-        Frequency = Frequency.AlmostNever,
-        AbilityType = AbilityType.PersonalDefensive
       },
       new()
       {

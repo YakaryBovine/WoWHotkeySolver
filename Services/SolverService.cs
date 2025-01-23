@@ -17,7 +17,7 @@ public sealed class SolverService
     //Order the specialization with the most reserved abilities first to ensure that core abilities can't take the
     //hotkeys they need.
     var orderedSpecializations = Class.Specializations
-        .OrderBy(x => x.GetAbilities().Count(ability => ability.AbilityType != AbilityType.Other))
+        .OrderBy(x => x.GetAbilities().Count(ability => ability.Type != AbilityType.Other))
         .ToList();
     
     Solve(solution, abilityHotkeyPool, Class.Core, orderedSpecializations.Last());
@@ -79,7 +79,7 @@ public sealed class SolverService
     ComponentAbility componentAbility,  Hotkey hotkey)
   {
     abilityHotkeyPool.Remove(componentAbility, hotkey);
-    solutionSet.Allocate(componentAbility, hotkey);
+    solutionSet.Assign(componentAbility, hotkey);
   }
 
   private IEnumerable<Hotkey> TransformAndOrderHotkeys()

@@ -15,19 +15,19 @@ public sealed class ShamanCore : ICharacterComponent
       {
         Name = "Ancestral Guidance",
         Frequency = Frequency.Rarely,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
         Name = "Astral Shift",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
         Name = "Capacitor Totem",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Stun
+        Type = AbilityType.Stun
       },
       new()
       {
@@ -73,13 +73,13 @@ public sealed class ShamanCore : ICharacterComponent
       {
         Name = "Spirit Walk/Gust of Wind",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Movement
+        Type = AbilityType.Movement
       },
       new()
       {
         Name = "Wind Shear/Cleanse Spirit",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Interrupt
+        Type = AbilityType.Interrupt
       },
       new()
       {

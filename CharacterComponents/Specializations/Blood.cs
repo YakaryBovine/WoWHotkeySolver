@@ -30,13 +30,13 @@ public sealed class Blood : ICharacterComponent
       {
         Name = "Dark Command",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Taunt
+        Type = AbilityType.Taunt
       },
       new()
       {
         Name = "Death Strike",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.MainSpender
+        Type = AbilityType.MainSpender
       },
       new()
       {
@@ -47,7 +47,7 @@ public sealed class Blood : ICharacterComponent
       {
         Name = "Dancing Rune Weapon",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.ShortPrimaryCooldown
+        Type = AbilityType.ShortPrimaryCooldown
       },
       new()
       {
@@ -68,7 +68,7 @@ public sealed class Blood : ICharacterComponent
       {
         Name = "Vampiric Blood",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {

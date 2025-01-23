@@ -30,13 +30,13 @@ public sealed class CatForm : ICharacterComponent
       {
         Name = "Ferocious Bite",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.MainSpender
+        Type = AbilityType.MainSpender
       },
       new()
       {
         Name = "Primal Wrath",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.AoE
+        Type = AbilityType.AoE
       },
       new()
       {
@@ -62,6 +62,12 @@ public sealed class CatForm : ICharacterComponent
       {
         Name = "Feral Frenzy",
         Frequency = Frequency.Infrequent
+      },
+      new()
+      {
+        Name = "Survival Instincts",
+        Frequency = Frequency.AlmostNever,
+        Type = AbilityType.PersonalDefensive
       },
     };
     return abilities;

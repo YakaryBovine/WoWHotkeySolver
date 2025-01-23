@@ -20,7 +20,7 @@ public sealed class PaladinCore : ICharacterComponent
       {
         Name = "Divine Steed",
         Frequency = Frequency.Semifrequent,
-        AbilityType = AbilityType.Movement
+        Type = AbilityType.Movement
       },
       new()
       {
@@ -36,7 +36,7 @@ public sealed class PaladinCore : ICharacterComponent
       {
         Name = "Rebuke/Cleanse",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Interrupt
+        Type = AbilityType.Interrupt
       },
       new()
       {
@@ -57,19 +57,19 @@ public sealed class PaladinCore : ICharacterComponent
       {
         Name = "Consecration",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.AoE
+        Type = AbilityType.AoE
       },
       new()
       {
         Name = "Blessing of Sacrifice",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.ExternalDefensive
+        Type = AbilityType.ExternalDefensive
       },
       new()
       {
         Name = "Hammer of Justice/Blessing of Freedom",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Stun
+        Type = AbilityType.Stun
       },
       new()
       {
@@ -80,7 +80,7 @@ public sealed class PaladinCore : ICharacterComponent
       {
         Name = "Divine Shield",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       }
     };
     abilities.AddRange(new Shared().GetAbilities());

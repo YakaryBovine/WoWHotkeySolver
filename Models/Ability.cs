@@ -8,13 +8,15 @@ public sealed class Ability : IEquatable<Ability>
   
   public required Frequency Frequency { get; init; }
   
-  public AbilityType AbilityType { get; init; }
+  public AbilityType Type { get; init; }
+
+  public AbilitySlot Slot { get; init; } = AbilitySlot.All;
 
   public bool Equals(Ability? other)
   {
     if (ReferenceEquals(null, other)) return false;
     if (ReferenceEquals(this, other)) return true;
-    return Name == other.Name && Frequency == other.Frequency && AbilityType == other.AbilityType;
+    return Name == other.Name && Frequency == other.Frequency && Type == other.Type;
   }
 
   public override bool Equals(object? obj)
@@ -24,6 +26,6 @@ public sealed class Ability : IEquatable<Ability>
 
   public override int GetHashCode()
   {
-    return HashCode.Combine(Name, (int)Frequency, (int)AbilityType);
+    return HashCode.Combine(Name, (int)Frequency, (int)Type);
   }
 }

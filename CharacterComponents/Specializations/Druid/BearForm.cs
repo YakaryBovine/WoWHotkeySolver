@@ -30,19 +30,19 @@ public sealed class BearForm : ICharacterComponent
       {
         Name = "Swipe",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.AoE
+        Type = AbilityType.AoE
       },
       new()
       {
         Name = "Growl",
         Frequency = Frequency.Semifrequent,
-        AbilityType = AbilityType.Taunt
+        Type = AbilityType.Taunt
       },
       new()
       {
         Name = "Maul",
         Frequency = Frequency.Constant,
-        AbilityType = AbilityType.MainSpender
+        Type = AbilityType.MainSpender
       },
       new()
       {
@@ -58,18 +58,24 @@ public sealed class BearForm : ICharacterComponent
       {
         Name = "Rage of the Sleeper",
         Frequency = Frequency.Semifrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
         Name = "Lunar Beam",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.ExternalDefensive
+        Type = AbilityType.ExternalDefensive
       },
       new()
       {
         Name = "Moonfire",
         Frequency = Frequency.Infrequent
+      },
+      new()
+      {
+        Name = "Survival Instincts",
+        Frequency = Frequency.AlmostNever,
+        Type = AbilityType.PersonalDefensive
       },
     };
     return abilities;

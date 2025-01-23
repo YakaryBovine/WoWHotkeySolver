@@ -45,7 +45,7 @@ public sealed class HolyPaladin : ICharacterComponent
       {
         Name = "Avenging Wrath/Avenging Crusader",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.ShortPrimaryCooldown
+        Type = AbilityType.ShortPrimaryCooldown
       },
       new()
       {
@@ -66,7 +66,7 @@ public sealed class HolyPaladin : ICharacterComponent
       {
         Name = "Divine Protection",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       }
     };
     return abilities;

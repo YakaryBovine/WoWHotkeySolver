@@ -35,13 +35,13 @@ public sealed class Balance : ICharacterComponent
       {
         Name = "Starsurge",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.MainSpender
+        Type = AbilityType.MainSpender
       },
       new()
       {
         Name = "Starfall",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.AoE
+        Type = AbilityType.AoE
       },
     };
     return abilities;

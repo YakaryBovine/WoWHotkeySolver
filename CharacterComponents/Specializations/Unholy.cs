@@ -25,7 +25,7 @@ public sealed class Unholy : ICharacterComponent
       {
         Name = "Death Coil",
         Frequency = Frequency.Constant,
-        AbilityType = AbilityType.MainSpender
+        Type = AbilityType.MainSpender
       },
       new()
       {

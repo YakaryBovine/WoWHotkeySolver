@@ -15,31 +15,31 @@ public sealed class Shared : ICharacterComponent
       {
         Name = "Healthstone",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Healthstone
+        Type = AbilityType.Healthstone
       },
       new()
       {
         Name = "Healing Potion",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.HealingPotion
+        Type = AbilityType.HealingPotion
       },
       new()
       {
         Name = "Combat Potion",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.CombatPotion
+        Type = AbilityType.CombatPotion
       },
       new()
       {
         Name = "Trinket",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Trinket
+        Type = AbilityType.Trinket
       },
       new()
       {
         Name = "Opie Menu",
         Frequency = Frequency.AlmostNever,
-        AbilityType = AbilityType.OpieMenu
+        Type = AbilityType.OpieMenu
       }
     };
   }

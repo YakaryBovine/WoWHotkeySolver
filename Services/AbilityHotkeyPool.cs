@@ -42,7 +42,7 @@ public sealed class AbilityHotkeyPool
   public bool TryGetReservedHotkey(Ability ability, [NotNullWhen(true)] out Hotkey? hotkey)
   {
     hotkey = Hotkeys
-      .Where(x => x.ReservedForAbilityType != AbilityType.Other && x.ReservedForAbilityType == ability.AbilityType)
+      .Where(x => x.ReservedForAbilityType != AbilityType.Other && x.ReservedForAbilityType == ability.Type)
       .Cast<Hotkey?>()
       .FirstOrDefault();
     return hotkey != null;

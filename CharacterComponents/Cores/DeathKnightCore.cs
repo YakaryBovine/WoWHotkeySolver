@@ -20,13 +20,13 @@ public sealed class DeathKnightCore : ICharacterComponent
       {
         Name = "Anti-Magic Shell",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
         Name = "Blinding Sleet",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Stun
+        Type = AbilityType.Stun
       },
       new()
       {
@@ -42,13 +42,13 @@ public sealed class DeathKnightCore : ICharacterComponent
       {
         Name = "Death and Decay (self)",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.AoE
+        Type = AbilityType.AoE
       },
       new()
       {
         Name = "Death and Decay (cursor)",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.AoETargeted
+        Type = AbilityType.AoETargeted
       },
       new()
       {
@@ -59,25 +59,25 @@ public sealed class DeathKnightCore : ICharacterComponent
       {
         Name = "Death's Advance",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.Movement
+        Type = AbilityType.Movement
       },
       new()
       {
         Name = "Icebound Fortitude",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
         Name = "Lichborne",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
         Name = "Mind Freeze",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.Interrupt
+        Type = AbilityType.Interrupt
       },
       new()
       {

@@ -30,19 +30,19 @@ public sealed class Restoration : ICharacterComponent
       {
         Name = "Wild Growth",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.AoE
+        Type = AbilityType.AoE
       },
       new()
       {
         Name = "Swiftmend",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.MainSpender
+        Type = AbilityType.MainSpender
       },
       new()
       {
         Name = "Ironbark",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.ExternalDefensive
+        Type = AbilityType.ExternalDefensive
       },
       new()
       {

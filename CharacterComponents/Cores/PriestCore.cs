@@ -30,19 +30,19 @@ public sealed class PriestCore : ICharacterComponent
       {
         Name = "Psychic Scream",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.Stun
+        Type = AbilityType.Stun
       },
       new()
       {
         Name = "Fade",
         Frequency = Frequency.Rarely,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
         Name = "Angelic Feather",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.Movement
+        Type = AbilityType.Movement
       },
       new()
       {
@@ -73,7 +73,7 @@ public sealed class PriestCore : ICharacterComponent
       {
         Name = "Desperate Prayer",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.PersonalDefensive
+        Type = AbilityType.PersonalDefensive
       },
       new()
       {
@@ -89,19 +89,19 @@ public sealed class PriestCore : ICharacterComponent
       {
         Name = "Purify/Purify Disease/Silence",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.Interrupt
+        Type = AbilityType.Interrupt
       },
       new()
       {
         Name = "Shackle Undead/Guardian Spirit",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.ExternalDefensive
+        Type = AbilityType.ExternalDefensive
       },
       new()
       {
         Name = "Shadowmeld",
         Frequency = Frequency.AlmostNever,
-        AbilityType = AbilityType.ExternalDefensive
+        Type = AbilityType.ExternalDefensive
       }
     };
     abilities.AddRange(new Shared().GetAbilities());

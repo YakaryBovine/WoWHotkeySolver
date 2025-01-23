@@ -55,7 +55,7 @@ public sealed class Holy : ICharacterComponent
       {
         Name = "Holy Word: Sanctify",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.AoE
+        Type = AbilityType.AoE
       },
       new()
       {

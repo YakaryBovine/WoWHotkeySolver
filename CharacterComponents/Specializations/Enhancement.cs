@@ -30,19 +30,19 @@ public sealed class Enhancement : ICharacterComponent
       {
         Name = "Lightning Bolt",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.MainSpender
+        Type = AbilityType.MainSpender
       },
       new()
       {
         Name = "Crash Lightning",
         Frequency = Frequency.Frequent,
-        AbilityType = AbilityType.AoE
+        Type = AbilityType.AoE
       },
       new()
       {
         Name = "Feral Spirit",
         Frequency = Frequency.Infrequent,
-        AbilityType = AbilityType.ShortPrimaryCooldown
+        Type = AbilityType.ShortPrimaryCooldown
       },
       new()
       {
