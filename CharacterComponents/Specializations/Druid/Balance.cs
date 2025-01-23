@@ -31,6 +31,18 @@ public sealed class Balance : ICharacterComponent
         Name = "Sunfire",
         Frequency = Frequency.Frequent
       },
+      new()
+      {
+        Name = "Starsurge",
+        Frequency = Frequency.Frequent,
+        AbilityType = AbilityType.MainSpender
+      },
+      new()
+      {
+        Name = "Starfall",
+        Frequency = Frequency.Frequent,
+        AbilityType = AbilityType.AoE
+      },
     };
     return abilities;
   }

@@ -36,6 +36,12 @@ public class DruidCore : ICharacterComponent
       },
       new()
       {
+        Name = "Survival Instincts",
+        Frequency = Frequency.Constant,
+        AbilityType = AbilityType.PersonalDefensive
+      },
+      new()
+      {
         Name = "Heart of the Wild",
         Frequency = Frequency.AlmostNever
       },
@@ -58,7 +64,7 @@ public class DruidCore : ICharacterComponent
       new()
       {
         Name = "Cyclone",
-        Frequency = Frequency.Rarely
+        Frequency = Frequency.AlmostNever
       },
       new()
       {
@@ -68,7 +74,8 @@ public class DruidCore : ICharacterComponent
       new()
       {
         Name = "Incapacitating Roar/Mighty Bash",
-        Frequency = Frequency.Rarely
+        Frequency = Frequency.Rarely,
+        AbilityType = AbilityType.Stun
       },
       new()
       {
@@ -87,11 +94,6 @@ public class DruidCore : ICharacterComponent
       },
       new()
       {
-        Name = "Revive",
-        Frequency = Frequency.AlmostNever
-      },
-      new()
-      {
         Name = "Soothe",
         Frequency = Frequency.Rarely
       },
@@ -99,6 +101,32 @@ public class DruidCore : ICharacterComponent
       {
         Name = "Hibernate",
         Frequency = Frequency.AlmostNever
+      },
+      new()
+      {
+        Name = "Prowl",
+        Frequency = Frequency.AlmostNever
+      },
+      new()
+      {
+        Name = "Survival Instincts",
+        Frequency = Frequency.AlmostNever,
+        AbilityType = AbilityType.PersonalDefensive
+      },
+      new()
+      {
+        Name = "Adaptive Swarm",
+        Frequency = Frequency.Infrequent
+      },
+      new()
+      {
+        Name = "Nature's Vigil",
+        Frequency = Frequency.Rarely
+      },
+      new()
+      {
+        Name = "Shadowmeld",
+        Frequency = Frequency.Rarely
       },
     };
     return abilities;
