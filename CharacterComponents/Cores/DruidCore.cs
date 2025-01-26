@@ -125,6 +125,16 @@ public class DruidCore : ICharacterComponent
         Frequency = Frequency.AlmostNever,
         Slot = AbilitySlot.Dead
       },
+      new()
+      {
+        Name = "Bear Form",
+        Frequency = Frequency.Infrequent
+      },
+      new()
+      {
+        Name = "Cat Form",
+        Frequency = Frequency.Infrequent
+      }
     };
     abilities.AddRange(new Shared().GetAbilities());
     return abilities;

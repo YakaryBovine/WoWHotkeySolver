@@ -98,7 +98,7 @@ public sealed class Balance : ICharacterComponent
       {
         Name = "New Moon",
         Frequency = Frequency.Semifrequent
-      },
+      }
     };
     return abilities;
   }

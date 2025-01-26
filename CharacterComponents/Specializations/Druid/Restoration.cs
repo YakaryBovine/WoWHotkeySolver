@@ -136,7 +136,7 @@ public sealed class Restoration : ICharacterComponent
         Name = "Incarnation/Convoke the Spirits",
         Frequency = Frequency.Rarely,
         Type = AbilityType.ShortPrimaryCooldown
-      }
+      },
     };
     return abilities;
   }
