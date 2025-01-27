@@ -12,12 +12,14 @@ public static class HotkeyProvider
       new()
       {
         Key = "q",
-        Convenience = Convenience.Staple
+        Convenience = Convenience.Staple,
+        ReservedForAbilityType = AbilityType.SecondaryBuilder
       },
       new()
       {
         Key = "e",
-        Convenience = Convenience.Staple
+        Convenience = Convenience.Staple,
+        ReservedForAbilityType = AbilityType.PrimaryBuilder
       },
       new()
       {

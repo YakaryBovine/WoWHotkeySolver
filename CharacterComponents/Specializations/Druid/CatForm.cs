@@ -15,13 +15,27 @@ public sealed class CatForm : ICharacterComponent
       {
         Name = "Shred",
         Frequency = Frequency.Constant,
-        Slot = AbilitySlot.Hostile
+        Slot = AbilitySlot.Hostile,
+        Type = AbilityType.PrimaryBuilder,
+        Child = new Ability
+        {
+          Name = "Mangle (Fluid Form)",
+          Frequency = Frequency.Constant,
+          Slot = AbilitySlot.Hostile
+        }
       },
       new()
       {
         Name = "Rake",
         Frequency = Frequency.Constant,
-        Slot = AbilitySlot.Hostile
+        Slot = AbilitySlot.Hostile,
+        Type = AbilityType.SecondaryBuilder,
+        Child = new Ability
+        {
+          Name = "Thrash (Fluid Form)",
+          Frequency = Frequency.Constant,
+          Slot = AbilitySlot.Hostile
+        }
       },
       new()
       {
@@ -50,7 +64,8 @@ public sealed class CatForm : ICharacterComponent
       new()
       {
         Name = "Thrash",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Frequent,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
@@ -91,6 +106,12 @@ public sealed class CatForm : ICharacterComponent
       {
         Name = "Adaptive Swarm",
         Frequency = Frequency.Infrequent
+      },
+      new()
+      {
+        Name = "Moonfire",
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Hostile
       }
     };
     return abilities;

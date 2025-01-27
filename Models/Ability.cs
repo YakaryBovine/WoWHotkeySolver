@@ -12,6 +12,12 @@ public sealed class Ability : IEquatable<Ability>
 
   public AbilitySlot Slot { get; init; } = AbilitySlot.All;
 
+  /// <summary>
+  /// An ability that can be thought of as an extension of this one, so it should be on the same key but with a Shift
+  /// modifier.
+  /// </summary>
+  public Ability? Child { get; init; }
+  
   public bool Equals(Ability? other)
   {
     if (ReferenceEquals(null, other)) return false;

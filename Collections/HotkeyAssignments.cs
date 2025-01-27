@@ -12,30 +12,30 @@ public sealed class HotkeyAssignments
 {
   public required string Title { get; init; }
   
-  private readonly Dictionary<(Hotkey Hotkey, AbilitySlot Slot), Ability> _hotkeys = new();
+  private readonly Dictionary<HotkeyInSlot, Ability> _hotkeys = new();
   
   /// <summary>
   /// Assigns a hotkey to an ability, but only if neither have been assigned already.
   /// </summary>
-  public bool TryAssign(Ability ability, (Hotkey Hotkey, AbilitySlot Slot) hotkeyInSlot)
+  public bool TryAssign(Ability ability, HotkeyInSlot hotkeyInSlot)
   {
     if (_hotkeys.ContainsKey(hotkeyInSlot))
       return false;
     
     //Todo: insanity, so bad
-    if (_hotkeys.ContainsKey((hotkeyInSlot.Hotkey, AbilitySlot.All)))
+    if (_hotkeys.ContainsKey(hotkeyInSlot with { Slot = AbilitySlot.All }))
       return false;
 
     //Todo: surely not...
     if (hotkeyInSlot.Slot == AbilitySlot.All)
     {
-      if (_hotkeys.ContainsKey((hotkeyInSlot.Hotkey, AbilitySlot.Dead)))
+      if (_hotkeys.ContainsKey(hotkeyInSlot with { Slot = AbilitySlot.Dead }))
         return false;
       
-      if (_hotkeys.ContainsKey((hotkeyInSlot.Hotkey, AbilitySlot.Friendly)))
+      if (_hotkeys.ContainsKey(hotkeyInSlot with { Slot = AbilitySlot.Friendly }))
         return false;
       
-      if (_hotkeys.ContainsKey((hotkeyInSlot.Hotkey, AbilitySlot.Hostile)))
+      if (_hotkeys.ContainsKey(hotkeyInSlot with { Slot = AbilitySlot.Hostile }))
         return false;
     }
 
@@ -51,7 +51,7 @@ public sealed class HotkeyAssignments
   ///   Gets the hotkey solution for the specified ability, regardless of which <see cref="ICharacterComponent" />
   ///   it was assigned to.
   /// </summary>
-  public bool TryGetAssignment(Ability ability, [NotNullWhen(true)] out (Hotkey Hotkey, AbilitySlot AbilitySlot)? assignment)
+  public bool TryGetAssignment(Ability ability, [NotNullWhen(true)] out HotkeyInSlot? assignment)
   {
     var solutionKvp = _hotkeys.FirstOrDefault(x => x.Value.Equals(ability));
 

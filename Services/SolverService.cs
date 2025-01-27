@@ -46,6 +46,7 @@ public sealed class SolverService
     
     AllocateAlreadySolvedHotkeys(assignedHotkeys, abilityPool, previousSolutions);
     AllocateReservedHotkeys(assignedHotkeys, abilityPool, hotkeyPool);
+    AllocateChildHotkeys(assignedHotkeys, abilityPool);
     AllocateUnreservedHotkeys(assignedHotkeys, abilityPool, hotkeyPool);
 
     return assignedHotkeys;
@@ -61,7 +62,7 @@ public sealed class SolverService
     foreach (var ability in abilityPool.Abilities)
       foreach (var previousSolution in previousSolutions)
         if (previousSolution.TryGetAssignment(ability, out var assignment))
-          if (assignments.TryAssign(ability, assignment.Value))
+          if (assignments.TryAssign(ability, assignment))
             break;
   }
   
@@ -70,8 +71,30 @@ public sealed class SolverService
   {
     foreach (var ability in abilityPool.Abilities)
       foreach (var reservedHotkey in hotkeyPool.GetReservedHotkey(ability.Type))
-        if (hotkeyAssignments.TryAssign(ability, (reservedHotkey, ability.Slot)))
+        if (hotkeyAssignments.TryAssign(ability, new HotkeyInSlot(reservedHotkey, ability.Slot)))
           break;
+  }
+  
+  private static void AllocateChildHotkeys(HotkeyAssignments assignedHotkeys, AbilityPool abilityPool)
+  {
+    foreach (var parent in abilityPool.Abilities)
+    {
+      if (parent.Child == null)
+        continue;
+
+      if (!assignedHotkeys.TryGetAssignment(parent, out var parentHotkeyAndSlot))
+        continue;
+
+      var parentHotkey = parentHotkeyAndSlot.Hotkey;
+      var parentSlot = parentHotkeyAndSlot.Slot;
+      assignedHotkeys.TryAssign(parent.Child, new HotkeyInSlot(parentHotkey with
+      {
+        Modifier = Modifier.Shift,
+        Convenience = parentHotkey.Convenience.ApplyModifierPenalty(),
+        AllowShiftModifier = false,
+        ReservedForAbilityType = AbilityType.Other
+      }, parentSlot));
+    }
   }
   
   private static void AllocateUnreservedHotkeys(HotkeyAssignments assignments, AbilityPool abilityPool, HotkeyPool hotkeyPool)
@@ -79,7 +102,7 @@ public sealed class SolverService
     foreach (var ability in abilityPool.Abilities.OrderBy(x => x.Frequency))
     {
       foreach (var hotkey in hotkeyPool.Hotkeys)
-        if (assignments.TryAssign(ability, (hotkey, ability.Slot)))
+        if (assignments.TryAssign(ability, new HotkeyInSlot(hotkey, ability.Slot)))
           break;
     }
   }

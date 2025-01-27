@@ -27,13 +27,15 @@ public sealed class Balance : ICharacterComponent
       {
         Name = "Rejuvenation",
         Frequency = Frequency.Constant,
-        Slot = AbilitySlot.Friendly
+        Slot = AbilitySlot.Friendly,
+        Type = AbilityType.PrimaryBuilder
       },
       new()
       {
         Name = "Regrowth",
         Frequency = Frequency.Constant,
-        Slot = AbilitySlot.Friendly
+        Slot = AbilitySlot.Friendly,
+        Type = AbilityType.SecondaryBuilder
       },
       new()
       {
@@ -97,7 +99,8 @@ public sealed class Balance : ICharacterComponent
       new()
       {
         Name = "New Moon",
-        Frequency = Frequency.Semifrequent
+        Frequency = Frequency.Semifrequent,
+        Slot = AbilitySlot.Hostile
       }
     };
     return abilities;

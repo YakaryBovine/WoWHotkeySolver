@@ -14,13 +14,27 @@ public sealed class BearForm : ICharacterComponent
       new()
       {
         Name = "Thrash",
-        Frequency = Frequency.Constant
+        Frequency = Frequency.Constant,
+        Type = AbilityType.SecondaryBuilder,
+        Slot = AbilitySlot.Hostile,
+        Child = new Ability
+        {
+          Name = "Rake (Fluid Form)",
+          Frequency = Frequency.Constant
+        }
       },
       new()
       {
         Name = "Mangle",
         Frequency = Frequency.Constant,
-        Slot = AbilitySlot.Hostile
+        Slot = AbilitySlot.Hostile,
+        Type = AbilityType.PrimaryBuilder,
+        Child = new Ability
+        {
+          Name = "Shred (Fluid Form)",
+          Frequency = Frequency.Constant,
+          Slot = AbilitySlot.Hostile
+        }
       },
       new()
       {
@@ -48,9 +62,17 @@ public sealed class BearForm : ICharacterComponent
       },
       new()
       {
+        Name = "Rejuvenation",
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Friendly,
+        Type = AbilityType.PrimaryBuilder
+      },
+      new()
+      {
         Name = "Regrowth",
         Frequency = Frequency.Semifrequent,
-        Slot = AbilitySlot.Friendly
+        Slot = AbilitySlot.Friendly,
+        Type = AbilityType.SecondaryBuilder
       },
       new()
       {
@@ -73,7 +95,7 @@ public sealed class BearForm : ICharacterComponent
       new()
       {
         Name = "Moonfire",
-        Frequency = Frequency.Infrequent,
+        Frequency = Frequency.Constant,
         Slot = AbilitySlot.Hostile
       },
       new()

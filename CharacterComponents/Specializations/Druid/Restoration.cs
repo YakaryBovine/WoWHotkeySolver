@@ -21,25 +21,41 @@ public sealed class Restoration : ICharacterComponent
       {
         Name = "Rejuvenation",
         Frequency = Frequency.Constant,
-        Slot = AbilitySlot.Friendly
+        Slot = AbilitySlot.Friendly,
+        Type = AbilityType.PrimaryBuilder
       },
       new()
       {
         Name = "Regrowth",
         Frequency = Frequency.Constant,
-        Slot = AbilitySlot.Friendly
+        Slot = AbilitySlot.Friendly,
+        Type = AbilityType.SecondaryBuilder
       },
       new()
       {
         Name = "Starfire",
         Frequency = Frequency.Constant,
-        Slot = AbilitySlot.Hostile
+        Slot = AbilitySlot.Hostile,
+        Type = AbilityType.SecondaryBuilder,
+        Child = new Ability
+        {
+          Name = "Rake (Fluid Form)",
+          Frequency = Frequency.Constant,
+          Slot = AbilitySlot.Hostile
+        }
       },
       new()
       {
         Name = "Wrath",
         Frequency = Frequency.Constant,
-        Slot = AbilitySlot.Hostile
+        Slot = AbilitySlot.Hostile,
+        Type = AbilityType.PrimaryBuilder,
+        Child = new Ability
+        {
+          Name = "Shred (Fluid Form)",
+          Frequency = Frequency.Constant,
+          Slot = AbilitySlot.Hostile
+        }
       },
       new()
       {

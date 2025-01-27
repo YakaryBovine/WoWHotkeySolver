@@ -3,6 +3,8 @@
 public enum AbilityType
 {
   Other,
+  PrimaryBuilder,
+  SecondaryBuilder,
   Interrupt,
   Movement,
   Stun,
