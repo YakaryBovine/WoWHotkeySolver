@@ -87,7 +87,8 @@ public sealed class Restoration : ICharacterComponent
       {
         Name = "Swiftmend",
         Frequency = Frequency.Semifrequent,
-        Slot = AbilitySlot.Friendly
+        Slot = AbilitySlot.Friendly,
+        Type = AbilityType.MainSpender
       },
       new()
       {
@@ -138,7 +139,8 @@ public sealed class Restoration : ICharacterComponent
       new()
       {
         Name = "Efflorescence",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        Type = AbilityType.AoETargeted
       },
       new()
       {

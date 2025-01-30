@@ -127,12 +127,12 @@ public class DruidCore : ICharacterComponent
       },
       new()
       {
-        Name = "Bear Form",
+        Name = "Cat Form",
         Frequency = Frequency.Infrequent
       },
       new()
       {
-        Name = "Cat Form",
+        Name = "Bear Form",
         Frequency = Frequency.Infrequent
       }
     };
