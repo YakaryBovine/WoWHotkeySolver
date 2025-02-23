@@ -13,11 +13,6 @@ public class DruidCore : ICharacterComponent
     {
       new()
       {
-        Name = "Dash",
-        Frequency = Frequency.Rarely
-      },
-      new()
-      {
         Name = "Wild Charge",
         Frequency = Frequency.Infrequent,
         Type = AbilityType.Movement
@@ -62,8 +57,7 @@ public class DruidCore : ICharacterComponent
       {
         Name = "Incapacitating Roar/Mighty Bash",
         Frequency = Frequency.Rarely,
-        Type = AbilityType.Stun,
-        Slot = AbilitySlot.Hostile
+        Type = AbilityType.Stun
       },
       new()
       {
@@ -77,11 +71,6 @@ public class DruidCore : ICharacterComponent
       },
       new()
       {
-        Name = "Stampeding Roar",
-        Frequency = Frequency.Rarely
-      },
-      new()
-      {
         Name = "Soothe",
         Frequency = Frequency.Rarely,
         Slot = AbilitySlot.Hostile
@@ -91,11 +80,6 @@ public class DruidCore : ICharacterComponent
         Name = "Hibernate",
         Frequency = Frequency.AlmostNever,
         Slot = AbilitySlot.Hostile
-      },
-      new()
-      {
-        Name = "Prowl",
-        Frequency = Frequency.Rarely
       },
       new()
       {
@@ -127,13 +111,25 @@ public class DruidCore : ICharacterComponent
       },
       new()
       {
-        Name = "Cat Form",
-        Frequency = Frequency.Infrequent
+        Name = "Cat Form/Prowl",
+        Frequency = Frequency.Infrequent,
+        Type = AbilityType.Form1,
+        Child = new Ability
+        {
+          Name = "Dash",
+          Frequency = Frequency.Rarely
+        },
       },
       new()
       {
         Name = "Bear Form",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        Type = AbilityType.Form2,
+        Child = new Ability
+        {
+          Name = "Stampeding Roar",
+          Frequency = Frequency.Rarely
+        }
       }
     };
     abilities.AddRange(new Shared().GetAbilities());

@@ -27,5 +27,9 @@ public enum AbilityType
   MainSpender,
   
   /// <summary>A primary damage cooldown with a cooldown between 1 and 1.5 minutes.</summary>
-  ShortPrimaryCooldown
+  ShortPrimaryCooldown,
+
+  Form1,
+
+  Form2
 }

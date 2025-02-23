@@ -34,12 +34,14 @@ public static class HotkeyProvider
       new()
       {
         Key = "3",
-        Convenience = Convenience.Average
+        Convenience = Convenience.Average,
+        ReservedForAbilityType = AbilityType.Form1
       },
       new()
       {
         Key = "4",
-        Convenience = Convenience.Average
+        Convenience = Convenience.Average,
+        ReservedForAbilityType = AbilityType.Form2
       },
       new()
       {

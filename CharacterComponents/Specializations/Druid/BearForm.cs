@@ -44,8 +44,7 @@ public sealed class BearForm : ICharacterComponent
       new()
       {
         Name = "Swipe",
-        Frequency = Frequency.Frequent,
-        Type = AbilityType.AoE
+        Frequency = Frequency.Frequent
       },
       new()
       {
@@ -56,9 +55,15 @@ public sealed class BearForm : ICharacterComponent
       },
       new()
       {
-        Name = "Maul/Raze",
+        Name = "Maul",
         Frequency = Frequency.Constant,
         Type = AbilityType.MainSpender
+      },
+      new()
+      {
+        Name = "Raze",
+        Frequency = Frequency.Frequent,
+        Type = AbilityType.AoE
       },
       new()
       {
