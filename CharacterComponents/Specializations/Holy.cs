@@ -13,7 +13,7 @@ public sealed class Holy : ICharacterComponent
     {
       new()
       {
-        Name = "Apotheosis/Holy Word: Salvation",
+        Name = "Apotheosis",
         Frequency = Frequency.Rarely
       },
       new()
@@ -56,11 +56,6 @@ public sealed class Holy : ICharacterComponent
         Name = "Holy Word: Sanctify",
         Frequency = Frequency.Infrequent,
         Type = AbilityType.AoE
-      },
-      new()
-      {
-        Name = "Circle of Healing",
-        Frequency = Frequency.Frequent
       },
       new()
       {
