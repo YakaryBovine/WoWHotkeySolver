@@ -13,18 +13,29 @@ public sealed class PriestCore : ICharacterComponent
     {
       new()
       {
-        Name = "Mind Flay/Flash Heal/Smite",
-        Frequency = Frequency.Constant
+        Name = "Flash Heal",
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Friendly,
+        Type = AbilityType.PrimaryBuilder
       },
       new()
       {
-        Name = "Shadow Word: Pain/Vampiric Touch/Power Word: Shield",
-        Frequency = Frequency.Frequent
+        Name = "Shadow Word: Pain",
+        Frequency = Frequency.Frequent,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
-        Name = "Mind Blast/Holy Fire/Heal",
-        Frequency = Frequency.Constant
+        Name = "Power Word: Shield",
+        Frequency = Frequency.Rarely,
+        Slot = AbilitySlot.Friendly
+      },
+      new()
+      {
+        Name = "Mind Blast",
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Hostile,
+        Type = AbilityType.SecondaryBuilder
       },
       new()
       {
@@ -51,13 +62,29 @@ public sealed class PriestCore : ICharacterComponent
       },
       new()
       {
-        Name = "Shadowfiend/Power Infusion",
-        Frequency = Frequency.Rarely
+        Name = "Shadowfiend",
+        Frequency = Frequency.Rarely,
+        Slot = AbilitySlot.Hostile,
+        Type = AbilityType.ShortPrimaryCooldown
       },
       new()
       {
-        Name = "Dispel Magic/Leap",
-        Frequency = Frequency.Infrequent
+        Name = "Power Infusion",
+        Frequency = Frequency.Rarely,
+        Slot = AbilitySlot.Friendly,
+        Type = AbilityType.ShortPrimaryCooldown
+      },
+      new()
+      {
+        Name = "Dispel Magic",
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
+        Name = "Leap of Faith",
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
@@ -77,8 +104,15 @@ public sealed class PriestCore : ICharacterComponent
       },
       new()
       {
-        Name = "Shadow Word: Death/Power Word: Life",
-        Frequency = Frequency.Infrequent
+        Name = "Shadow Word: Death",
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
+        Name = "Power Word: Life",
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Friendly
       },
       new()
       {
@@ -87,21 +121,15 @@ public sealed class PriestCore : ICharacterComponent
       },
       new()
       {
-        Name = "Purify/Purify Disease/Silence",
+        Name = "Shackle Undead",
+        Frequency = Frequency.AlmostNever,
+        Slot = AbilitySlot.Hostile
+      },
+      new()
+      {
+        Name = "Silence/Purify",
         Frequency = Frequency.Frequent,
         Type = AbilityType.Interrupt
-      },
-      new()
-      {
-        Name = "Shackle Undead/Guardian Spirit",
-        Frequency = Frequency.Infrequent,
-        Type = AbilityType.ExternalDefensive
-      },
-      new()
-      {
-        Name = "Shadowmeld",
-        Frequency = Frequency.AlmostNever,
-        Type = AbilityType.ExternalDefensive
       }
     };
     abilities.AddRange(new Shared().GetAbilities());
