@@ -1,5 +1,4 @@
-﻿using WoWHotkeySolver.CharacterComponents.Cores;
-using WoWHotkeySolver.CharacterComponents.Specializations;
+﻿using WoWHotkeySolver.CharacterComponents.Priest;
 using WoWHotkeySolver.Models;
 
 namespace WoWHotkeySolver.CharacterClasses;
@@ -13,6 +12,7 @@ public sealed class Priest : ICharacterClass
   public List<ICharacterComponent> Specializations { get; } = new()
   {
     new Shadow(),
-    new Holy()
+    new Holy(),
+    new Discipline()
   };
 }

@@ -1,7 +1,7 @@
 ﻿using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.CharacterComponents.Cores;
+namespace WoWHotkeySolver.CharacterComponents.Priest;
 
 public sealed class PriestCore : ICharacterComponent
 {
@@ -23,12 +23,6 @@ public sealed class PriestCore : ICharacterComponent
         Name = "Shadow Word: Pain",
         Frequency = Frequency.Frequent,
         Slot = AbilitySlot.Hostile
-      },
-      new()
-      {
-        Name = "Power Word: Shield",
-        Frequency = Frequency.Rarely,
-        Slot = AbilitySlot.Friendly
       },
       new()
       {

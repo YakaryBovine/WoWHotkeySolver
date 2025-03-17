@@ -1,7 +1,7 @@
 ﻿using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.CharacterComponents.Specializations;
+namespace WoWHotkeySolver.CharacterComponents.Priest;
 
 public sealed class Holy : ICharacterComponent
 {
@@ -28,7 +28,7 @@ public sealed class Holy : ICharacterComponent
       new()
       {
         Name = "Apotheosis",
-        Frequency = Frequency.Rarely
+        Frequency = Frequency.Semifrequent
       },
       new()
       {
@@ -95,15 +95,16 @@ public sealed class Holy : ICharacterComponent
       },
       new()
       {
-        Name = "Prayer of Healing",
-        Frequency = Frequency.Rarely
-      },
-      new()
-      {
         Name = "Renew",
         Frequency = Frequency.Semifrequent,
         Slot = AbilitySlot.Friendly
       },
+      new()
+      {
+        Name = "Power Word: Shield",
+        Frequency = Frequency.Rarely,
+        Slot = AbilitySlot.Friendly
+      }
     };
     return abilities;
   }

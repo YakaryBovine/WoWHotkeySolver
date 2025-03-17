@@ -1,7 +1,7 @@
 ﻿using WoWHotkeySolver.Enums;
 using WoWHotkeySolver.Models;
 
-namespace WoWHotkeySolver.CharacterComponents.Specializations;
+namespace WoWHotkeySolver.CharacterComponents.Priest;
 
 public sealed class Shadow : ICharacterComponent
 {
@@ -13,6 +13,13 @@ public sealed class Shadow : ICharacterComponent
     {
       new()
       {
+        Name = "Mind Flay/Mind Spike",
+        Frequency = Frequency.Constant,
+        Slot = AbilitySlot.Hostile,
+        Type = AbilityType.PrimaryBuilder
+      },
+      new()
+      {
         Name = "Dispersion",
         Frequency = Frequency.Infrequent,
         Type = AbilityType.PersonalDefensive
@@ -20,23 +27,32 @@ public sealed class Shadow : ICharacterComponent
       new()
       {
         Name = "Void Eruption/Void Bolt",
-        Frequency = Frequency.Infrequent
+        Frequency = Frequency.Infrequent,
+        Slot = AbilitySlot.Hostile,
       },
       new()
       {
         Name = "Devouring Plague",
-        Frequency = Frequency.Frequent
+        Frequency = Frequency.Frequent,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
         Name = "Void Torrent",
-        Frequency = Frequency.Semifrequent
+        Frequency = Frequency.Semifrequent,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
         Name = "Shadow Crash",
         Frequency = Frequency.Frequent,
         Type = AbilityType.AoE
+      },
+      new()
+      {
+        Name = "Power Word: Shield",
+        Frequency = Frequency.Rarely,
+        Slot = AbilitySlot.Friendly
       }
     };
     return abilities;
