@@ -53,6 +53,12 @@ public sealed class Shadow : ICharacterComponent
         Name = "Power Word: Shield",
         Frequency = Frequency.Rarely,
         Slot = AbilitySlot.Friendly
+      },
+      new()
+      {
+        Name = "Vampiric Touch",
+        Frequency = Frequency.Frequent,
+        Slot = AbilitySlot.Hostile
       }
     };
     return abilities;
