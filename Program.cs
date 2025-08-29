@@ -5,7 +5,7 @@ using WoWHotkeySolver.Services;
 
 var solverService = new SolverService
 {
-  Class = new Priest(),
+  Class = new Monk(),
   Hotkeys = new HotkeyPool(HotkeyProvider.GetAllHotkeys())
 };
 

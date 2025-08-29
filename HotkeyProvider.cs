@@ -58,7 +58,8 @@ public static class HotkeyProvider
       new()
       {
         Key = "r",
-        Convenience = Convenience.Incredible
+        Convenience = Convenience.Incredible,
+        ReservedForAbilityType = AbilityType.Movement
       },
       new()
       {
