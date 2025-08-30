@@ -3,10 +3,4 @@ using WoWHotkeySolver.CharacterClasses;
 using WoWHotkeySolver.Collections;
 using WoWHotkeySolver.Services;
 
-var solverService = new SolverService
-{
-  Class = new Monk(),
-  Hotkeys = new HotkeyPool(HotkeyProvider.GetAllHotkeys())
-};
-
-solverService.SolveAll();
+SolverService.Solve(new Monk(), new HotkeyPool(HotkeyProvider.GetAllHotkeys()));

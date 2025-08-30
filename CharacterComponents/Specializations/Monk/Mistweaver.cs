@@ -78,6 +78,12 @@ public sealed class Mistweaver : ICharacterComponent
         Frequency = Frequency.Infrequent,
         Slot = AbilitySlot.Hostile
       },
+      new()
+      {
+        Name = "Provoke",
+        Frequency = Frequency.AlmostNever,
+        Slot = AbilitySlot.Hostile
+      }
     };
     return abilities;
   }

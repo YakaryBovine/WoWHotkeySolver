@@ -58,6 +58,12 @@ public sealed class Windwalker : ICharacterComponent
         Name = "Slicing Winds",
         Frequency = Frequency.Infrequent
       },
+      new()
+      {
+        Name = "Provoke",
+        Frequency = Frequency.AlmostNever,
+        Slot = AbilitySlot.Hostile
+      }
     };
     return abilities;
   }

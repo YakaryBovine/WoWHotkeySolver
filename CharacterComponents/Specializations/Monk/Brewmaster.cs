@@ -14,8 +14,9 @@ public sealed class Brewmaster : ICharacterComponent
       new()
       {
         Name = "Provoke",
-        Frequency = Frequency.Constant,
-        Type = AbilityType.Taunt
+        Frequency = Frequency.Semifrequent,
+        Type = AbilityType.Taunt,
+        Slot = AbilitySlot.Hostile
       },
       new()
       {
