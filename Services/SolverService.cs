@@ -63,26 +63,28 @@ public sealed class SolverService
   /// </summary>
   private static bool TryAssignHotkeyToClass(List<CharacterAbility> allAbilities, Ability abilityToAssign, Hotkey hotkeyToAssign, List<HotkeyAssignment> assignments)
   {
-    var matchingCharacterAbilities = allAbilities.Where(x => x.Ability == abilityToAssign);
-    var assignmentsMade = 0;
+    var matchingCharacterAbilities = allAbilities.Where(x => x.Ability == abilityToAssign).ToList();
+    
     foreach (var matchingAbility in matchingCharacterAbilities)
     {
       if (IsHotkeyAssigned(assignments, hotkeyToAssign, matchingAbility.Ability.Slot, matchingAbility.Specialization))
-        continue;
+        return false;
 
       if (IsAbilityAssigned(assignments, abilityToAssign, matchingAbility.Specialization))
-        continue;
-
+        return false;
+    }
+    
+    foreach (var matchingAbility in matchingCharacterAbilities)
+    {
       assignments.Add(new HotkeyAssignment
       {
         Specialization = matchingAbility.Specialization,
         Ability = abilityToAssign,
         Hotkey = hotkeyToAssign
       });
-      assignmentsMade += 1;
     }
 
-    return assignmentsMade != 0;
+    return true;
   }
   
   /// <summary>
